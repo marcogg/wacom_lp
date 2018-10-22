@@ -1,0 +1,8 @@
+01-Nov-2017 14:12:24.170 INFO [http-nio-8083-exec-18] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
+01-Nov-2017 14:12:28.470 INFO [http-nio-8083-exec-20] org.apache.catalina.core.ApplicationContext.log HTMLManager: restart: Reloading web application '/Promocion'
+01-Nov-2017 14:12:35.902 INFO [http-nio-8083-exec-20] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
+01-Nov-2017 14:21:19.157 INFO [http-nio-8083-exec-27] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
+01-Nov-2017 14:21:22.225 INFO [http-nio-8083-exec-28] org.apache.catalina.core.ApplicationContext.log HTMLManager: stop: Stopping web application '/Promocion'
+01-Nov-2017 14:21:22.291 INFO [http-nio-8083-exec-28] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
+01-Nov-2017 14:21:23.357 INFO [http-nio-8083-exec-27] org.apache.catalina.core.ApplicationContext.log HTMLManager: start: Starting web application '/Promocion'
+01-Nov-2017 14:21:29.639 INFO [http-nio-8083-exec-27] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'

@@ -1,0 +1,15 @@
+77.88.47.12 - - [21/Jun/2017:07:53:29 -0500] "GET /Promocion/ HTTP/1.1" 200 182
+157.55.39.58 - - [21/Jun/2017:14:47:19 -0500] "GET /Promocion/ HTTP/1.1" 200 182
+157.55.39.58 - - [21/Jun/2017:14:47:31 -0500] "GET /Promocion/registro/index.do HTTP/1.1" 200 16610
+207.46.13.3 - - [21/Jun/2017:15:48:38 -0500] "GET /Promocion/resources/js/bootstrap.min.js HTTP/1.1" 200 37045
+157.55.39.218 - - [21/Jun/2017:15:48:42 -0500] "GET /Promocion/resources/css/bootstrap-select.min.css HTTP/1.1" 200 6432
+157.55.39.218 - - [21/Jun/2017:15:48:42 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2622
+157.55.39.218 - - [21/Jun/2017:15:48:42 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+157.55.39.218 - - [21/Jun/2017:15:48:43 -0500] "GET /Promocion/resources/js/bootstrap-select.min.js HTTP/1.1" 200 33933
+157.55.39.218 - - [21/Jun/2017:15:48:43 -0500] "GET /Promocion/resources/js/bootstrap-session-timeout.js HTTP/1.1" 200 10199
+157.55.39.218 - - [21/Jun/2017:15:48:43 -0500] "GET /Promocion/resources/js/jquery.twbsPagination.js HTTP/1.1" 200 11482
+157.55.39.58 - - [21/Jun/2017:15:48:57 -0500] "GET /Promocion/resources/js/functions-system.js HTTP/1.1" 200 3510
+157.55.39.58 - - [21/Jun/2017:15:48:57 -0500] "GET /Promocion/resources/js/sweetalert.min.js HTTP/1.1" 200 16994
+45.55.247.211 - - [21/Jun/2017:17:10:57 -0500] "GET /Promocion/login.do HTTP/1.1" 200 13022
+45.55.247.211 - - [21/Jun/2017:17:11:12 -0500] "GET /Promocion/ HTTP/1.1" 200 182
+45.55.247.211 - - [21/Jun/2017:17:11:21 -0500] "GET /Promocion/registro/recupera-password.do HTTP/1.1" 200 13200

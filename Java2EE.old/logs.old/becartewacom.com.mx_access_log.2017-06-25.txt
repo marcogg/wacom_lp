@@ -1,0 +1,2 @@
+201.127.133.249 - - [25/Jun/2017:15:55:45 -0500] "GET /Promocion/login.dologin.do HTTP/1.1" 200 13022
+77.88.47.12 - - [25/Jun/2017:23:10:31 -0500] "GET /Promocion/registro/index.do HTTP/1.1" 200 16610

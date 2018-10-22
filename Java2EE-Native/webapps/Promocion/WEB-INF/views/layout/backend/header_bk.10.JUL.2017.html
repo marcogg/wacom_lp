@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<section layout:fragment="header-fragment">
+
+
+	<!--- TIPO HEADER ---><!--header-semi-transparent-->
+	<header id="header" class="header-narrow " data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 1, 'stickySetTop': '1'}">
+
+
+		<div class="header-body">
+			<div class="header-container container">
+				<div class="header-row">
+					<div class="header-column">
+						<div class="header-logo">
+							<a href="http://wacomlatam.com/terminos-y-condiciones-wacom-adobe.html">
+								<img alt="Wacom LATAM" width="63" height="59" th:src="|${path}img/logo.png|">
+							</a>
+						</div>
+					</div>
+
+
+					<div class="header-column">
+
+						<div class="header-row">
+
+							<!--- TIPO NAVEGACIÓN OVER --->
+							<div class="header-nav">
+
+
+								<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+									<i class="fa fa-bars"></i>
+								</button>
+
+								<ul class="header-social-icons social-icons hidden-xs show-lg show-md show-sm">
+
+									<!--
+                                        <li class="social-icons-facebook"><a href="https://www.facebook.com/becArtemx" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+
+                                        <li class="social-icons-instagram">
+                                        <a href="https://www.instagram.com/becarte.wacom" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+
+                                        <li class="social-icons-twitter"><a href="https://twitter.com/b_wacom" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li> -->
+
+								</ul>
+
+								<div class="header-nav-main header-nav-main-square header-nav-main-effect-3 header-nav-main-sub-effect-1 collapse">
+
+									<form id="tickets-menu" name="tickets-menu" method="post" th:action="@{/admin/ticket/index.do}">
+
+										<input id="status" name="status" type="hidden">
+										<input id="descalificar" name="descalificar" type="hidden">
+
+									</form>
+
+
+									<nav>
+										<ul class="nav nav-pills" id="mainNav">
+											<li>
+												<a data-hash data-hash-offset="70" th:href="@{/admin/usuario/index.do}">
+													<span class="glyphicon glyphicon-th-list"></span>
+													Usuarios
+												</a>
+											</li>
+
+											<li>
+												<a data-hash data-hash-offset="70" href="" onclick="$('#status').val( 'ACTIVO' ); $('#tickets-menu').trigger('submit'); return false;">
+													<span class="glyphicon glyphicon-th-list"></span>
+													Tickets Activos
+												</a>
+											</li>
+											<li>
+												<a data-hash data-hash-offset="70" href="" onclick="$('#status').val('DESCALIFICADO'); $('#tickets-menu').trigger('submit'); return false;">
+													<span class="glyphicon glyphicon-th-list"></span>
+													Tickets Descalificados
+												</a>
+											</li>
+											<li>
+												<a data-hash data-hash-offset="70" href="" onclick="$('#status').val('CODIGO_ENVIADO'); $('#tickets-menu').trigger('submit'); return false;">
+													<span class="glyphicon glyphicon-th-list"></span>
+													Tickets con Código Enviado
+												</a>
+											</li>
+
+										</ul>
+
+										<ul class="nav navbar-nav navbar-right">
+											<li th:if="${action != null}">
+												<form class="navbar-form" role="search" id="form-search-menu" name="form-search-menu" method="post" th:action="@{${action}}">
+													<div class="input-group">
+														<input type="text" class="form-control" placeholder="Palabra..." name="search" id="search" th:value="${search}">
+														<div class="input-group-btn">
+															<button name="btnSubmitSearch" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+															<button name="btnSubmitReset" class="btn btn-default" type="button" onclick="$('#search').val(''); $('#form-search-menu').trigger('submit');">
+																<i class="glyphicon glyphicon-remove" onclick=""></i>
+															</button>
+														</div>
+													</div>
+
+													<input id="numberPage" 	name="numberPage" 	th:value="${pageNumber}" type="hidden">
+													<input id="pageSizes" 	name="pageSizes" 	th:value="${pageSize}" 	 type="hidden">
+													<input id="status" 		name="status" 		th:value="${status}"	 type="hidden">
+
+												</form>
+											</li>
+											<li>
+												<a class="btn-logout" th:href="@{/logout.do}">
+													<span class="glyphicon glyphicon-user"></span>
+													Logout
+												</a>
+											</li>
+
+										</ul>
+
+
+									</nav>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+
+</section>
+
+</body>
+</html>

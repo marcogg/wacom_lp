@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/backend/main}">
+
+<head>
+	<title>...</title>
+</head>
+
+<body>
+
+
+<div layout:fragment="content-fragment" class="container form-width">
+
+	<div layout:include="layout/backend/messages :: messages-fragment">Messages...</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Nueva Categoria</h3>
+		</div>
+		<div class="panel-body">
+			<form th:object="${categoria}" id="categoria" name="categoria" method="post" th:action="@{/admin/categoria/add.do}">
+
+				<div class="form-group">
+					<label>Categoria *:</label>
+					<select th:field="${categoria.id}" class="selectpicker form-control" data-actions-box="true">
+						<option value="1" style="font-weight: bold;">ROOT</option>
+
+						<th:block th:each="cat1 : ${categorias}">
+							<option th:value="${cat1.id}"
+							        th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + ${cat1.nombre}"
+							        th:data-parent-id="${cat1.id}"
+							        data-parent="0" style="font-weight: bold;">
+							</option>
+
+							<option th:each="cat2 : ${cat1.childCategories}"
+							        th:value="${cat2.id}"
+							        th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + ${cat2.nombre}"
+							        th:data-parent-id="${cat1.id}"
+							        data-parent="0">
+							</option>
+
+						</th:block>
+
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>Nombre *:</label>
+					<input th:field="*{nombre}" class="form-control">
+					<div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="error">Name Error</div>
+
+				</div>
+
+				<div class="form-group">
+					<label>Imagen *:</label>
+					<input th:field="*{imagen}" type="hidden">
+					<input th:field="*{imagenForm}" type="hidden">
+					<br>
+					<button type="button" class="btn btn-danger btn-upload" data-toggle="modal" data-name-field="imagen" data-target="#uploadModal" style="width: 150px; margin-bottom: 5px;">
+						Subir archivo...
+					</button>
+					<div id="imagen-preview-form">
+						<a th:if="*{imagenUrl != null}" th:href="@{${categoria.imagenUrl}}" target="_blank">
+							<img class="img-thumbnail" th:src="@{${categoria.imagenUrl}}" style="max-width: 200px; border: 1px solid #ccc; border-radius: 3px;">
+						</a>
+					</div>
+
+					<div th:if="*{#fields.hasErrors('imagen')}" th:errors="*{imagen}" class="error">Name Error</div>
+				</div>
+
+				<div class="row">&nbsp;</div>
+
+				<div class="text-center">
+					<a class="btn btn-primary" th:href="@{/admin/categoria/}">
+						<span class="glyphicon glyphicon-arrow-left"></span>
+						Regresar
+					</a>
+					<button type="submit" class="btn btn-primary">
+						<span class="glyphicon glyphicon-ok"></span>
+						Guardar
+					</button>
+
+				</div>
+
+				<input th:field="*{dateCreated}" type="hidden">
+
+			</form>
+
+		</div>
+
+	</div>
+
+
+	<div layout:include="layout/backend/upload :: upload-fragment">Upload...</div>
+
+	<script type="text/javascript">
+		$(function () {
+			$("#id").on("change", function (evt) {
+				evt.preventDefault();
+				var parent = $(this).attr("data-parent");
+				var parentId = $(this).attr("data-parent-id");
+
+				if (parent == 1) {
+					$("#id").val(parentId);
+				}
+
+				//alert(parent + ", " + parentId);
+
+			})
+
+		})
+
+	</script>
+
+</div>
+
+
+</body>
+</html>

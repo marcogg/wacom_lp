@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	  th:with="path=${#strings.contains( #request.getRequestURI(), 'www.wacomlatam' ) ? 'http://www.wacomlatam.com/' : 'http://wacomlatam.com/'}">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title th:text="#{application.title}"></title>
+
+	<!-- Latest compiled and minified CSS -->
+	<!--<link th:href="@{/resources/css/bootstrap-theme.min.css}" rel="stylesheet">-->
+
+	<!--- <link th:href="@{/resources/css/bootstrap.min.css}" rel="stylesheet"> --->
+
+	<link th:href="@{/resources/css/sweetalert.css}" rel="stylesheet">
+
+	<link th:href="@{/resources/css/styles.css}" rel="stylesheet">
+    
+    
+    
+
+	<!-- FONTS -->
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+    
+    
+    
+    
+    
+    <title>Wacom Latam</title>
+
+	    <meta name="keywords" content="wacom latam, intuos pro, suite, adobe, creative Cloud" />
+		
+		<meta name="description" content="Adquiere una tableta Intuos pro y obtén una suscripción pre-pagada de 1 año al plan de adobe creativa cloud photography">
+		
+        <meta property="og:image" content="http://wacomlatam.com/img/share.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+		<meta name="author" content="KML media">
+      
+        
+        
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" th:href="|${path}img/favicon.ico|" type="image/x-icon" />
+		<link rel="apple-touch-icon" th:href="|${path}img/apple-touch-icon.png|">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Web Fonts  -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+        
+        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"> 
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" th:href="|${path}vendor/bootstrap/css/bootstrap.min.css|">
+		<link rel="stylesheet" th:href="|${path}vendor/font-awesome/css/font-awesome.min.css|">
+		<link rel="stylesheet" th:href="|${path}vendor/animate/animate.min.css|">
+		<link rel="stylesheet" th:href="|${path}vendor/simple-line-icons/css/simple-line-icons.min.css|">
+		<link rel="stylesheet" th:href="|${path}vendor/owl.carousel/assets/owl.carousel.min.css|">
+		<link rel="stylesheet" th:href="|${path}vendor/owl.carousel/assets/owl.theme.default.min.css|">
+		<link rel="stylesheet" th:href="|${path}vendor/magnific-popup/magnific-popup.min.css|">
+        
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" th:href="|${path}css/theme.css|">
+		<link rel="stylesheet" th:href="|${path}css/theme-elements.css|">
+		<!--- <link rel="stylesheet" href="/css/theme-blog.css">
+		<link rel="stylesheet" href="/css/theme-shop.css"> --->
+
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" th:href="|${path}vendor/rs-plugin/css/settings.css|">
+		<link rel="stylesheet" th:href="|${path}vendor/rs-plugin/css/layers.css|">
+		<link rel="stylesheet" th:href="|${path}vendor/rs-plugin/css/navigation.css|">
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" th:href="|${path}css/skins/default.css|">
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" th:href="|${path}css/custom.css|">
+        <link rel="stylesheet" th:href="|${path}css/monthly.css|">
+
+		<!-- Head Libs -->
+		<script th:src="|${path}vendor/modernizr/modernizr.min.js|"></script>
+
+
+		<!-- ANALYTICS NO BORRAR -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-92622603-1', 'auto');
+			ga('send', 'pageview');
+
+		</script>
+		<!-- //ANALYTICS NO BORRAR -->
+
+		<!-- Facebook Pixel Code -->
+		<script>
+			!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+				n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+				n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+				t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+				document,'script','https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '825213984283835'); // Insert your pixel ID here.
+			fbq('track', 'PageView');
+
+			fbq('track', 'ViewContent', {
+				value: 0.00,
+				currency: 'USD'
+			});
+
+		</script>
+		<!-- DO NOT MODIFY -->
+		<!-- End Facebook Pixel Code -->
+    
+    
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<script type="text/javascript" th:src="@{/resources/js/bootstrap.min.js}"></script>
+
+	<script type="text/javascript" th:src="@{/resources/js/sweetalert.min.js}"></script>
+
+	<script type="text/javascript" th:src="@{/resources/js/jquery.twbsPagination.js}"></script>
+
+	<script type="text/javascript" th:src="@{/resources/js/bootstrap-session-timeout.js}" charset="UTF-8"></script>
+
+	<script type="text/javascript" th:src="@{/resources/js/functions-system.js}" charset="UTF-8"></script>
+    
+    
+     <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '825213984283835'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+
+fbq('track', 'ViewContent', {
+value: 0.00,
+currency: 'USD'
+});
+
+</script>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+
+</head>
+
+<body>
+
+<!-- Fragmento de contenido: Header y si es editable en el layout -->
+<section layout:include="layout/frontend/header :: header-fragment" style="background-color: #999; padding: 0px;">Header...</section>
+
+
+<!-- Fragmento de Contenido: Menu -->
+<div layout:include="layout/frontend/menu :: menu-fragment">Menu...</div>
+
+
+<!-- No es editable, es solo lectura pero es necesaria para que el contenido de los view puedan ser mostrados -->
+<div layout:fragment="content-fragment">Contenido...</div>
+
+
+<!-- Fragmento de contenido: Footer y si es editable en el layout -->
+<section layout:include="layout/frontend/footer :: footer-fragment">Footer...</section>
+
+
+<!-- Fragmento de Sesión, no es editable, es de solo lectura -->
+<script type="text/javascript" layout:include="layout/utils/session :: session-fragment" sec:authorize="isAuthenticated()"></script>
+
+
+
+<!-- Vendor -->
+<!--- <script src="vendor/jquery/jquery.min.js"></script> --->
+<script th:src="|${path}js/jquery-2.1.4.js|"></script>
+<script th:src="|${path}vendor/jquery.appear/jquery.appear.min.js|"></script>
+<script th:src="|${path}vendor/jquery.easing/jquery.easing.min.js|"></script>
+<script th:src="|${path}vendor/jquery-cookie/jquery-cookie.min.js|"></script>
+<script th:src="|${path}vendor/bootstrap/js/bootstrap.min.js|"></script>
+<script th:src="|${path}vendor/common/common.min.js|"></script>
+<script th:src="|${path}vendor/jquery.validation/jquery.validation.min.js|"></script>
+<script th:src="|${path}vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js|"></script>
+<script th:src="|${path}vendor/jquery.gmap/jquery.gmap.min.js|"></script>
+<script th:src="|${path}vendor/jquery.lazyload/jquery.lazyload.min.js|"></script>
+<script th:src="|${path}vendor/isotope/jquery.isotope.min.js|"></script>
+<script th:src="|${path}vendor/owl.carousel/owl.carousel.min.js|"></script>
+<script th:src="|${path}vendor/magnific-popup/jquery.magnific-popup.min.js|"></script>
+<script th:src="|${path}vendor/vide/vide.min.js|"></script>
+
+
+<!-- Theme Base, Components and Settings -->
+<script th:src="|${path}js/theme.js|"></script>
+
+<!-- Current Page Vendor and Views -->
+<script th:src="|${path}vendor/rs-plugin/js/jquery.themepunch.tools.min.js|"></script>
+<script th:src="|${path}vendor/rs-plugin/js/jquery.themepunch.revolution.min.js|"></script>
+<script th:src="|${path}js/views/view.contact.js|"></script>
+
+<!-- Theme Custom -->
+<script th:src="|${path}js/custom.js|"></script>
+
+<!-- Theme Initialization Files -->
+<script th:src="|${path}js/theme.init.js|"></script>
+
+<!-- Examples -->
+<script th:src="|${path}js/examples/examples.portfolio.js|"></script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5078c76871b267df"></script>
+
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+</body>
+
+</html>

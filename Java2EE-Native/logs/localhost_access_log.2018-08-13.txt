@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [13/Aug/2018:08:40:47 -0500] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [13/Aug/2018:08:40:50 -0500] "GET /Promocion/resources/js/jquery.twbsPagination.js HTTP/1.1" 200 11482

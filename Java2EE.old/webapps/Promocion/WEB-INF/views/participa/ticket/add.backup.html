@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/frontend/main}">
+
+<head>
+
+	<!-- Fragment Upload Multiple -->
+	<script type="text/javascript" th:src="|@{/resources/js/file-upload.js}?r=${#dates.format(#dates.createNow(), 'ddMMyyyyHHmmss')}|"></script>
+
+</head>
+
+<body>
+
+
+<div layout:fragment="content-fragment" class="container form-width">
+
+	<div layout:include="layout/frontend/messages :: messages-fragment">Messages...</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Nuevo Ticket</h3>
+		</div>
+		<div class="panel-body">
+			<!--
+			<h3 class="text-center">
+				Te recordarmos que al momento de dar de alta un ticket,<br>
+				no es necesario que subas tu diseño. Tienes un tiempo máximo de 30 días para poder subir tu diseño, de lo contrario,<br>
+				el registro de tu ticket sera desactivado.
+			</h3>
+			-->
+
+			<h3 class="text-center" style="color: #000;">Los campos con(*) son necesarios.</h3>
+
+			<br>
+
+			<form th:object="${ticket}" id="ticket" name="ticket" method="post" th:action="@{/participa/ticket/add.do}">
+
+				<div class="row">
+
+					<div class="form-group col-sm-6">
+						<label>Fecha de compra *:<br>&nbsp;</label>
+						<div class="row">
+							<div class="col-sm-4">
+								<select th:field="*{day}" class="form-control">
+									<option value="">- Día -</option>
+									<option th:each="i : ${#numbers.sequence( 1, 31 )}"
+											th:with="index=${i < 10 ? '0' + i : i}"
+											th:value="${index}"
+											th:text="${index}"></option>
+								</select>
+
+								<div th:if="${#fields.hasErrors('day')}" th:errors="*{day}" class="error">Name Error</div>
+
+							</div>
+
+							<div class="col-sm-4" th:with="mesesArray=${'ENE,FEB,MAR,ABR,MAY,JUN,JUL,AGO,SEP,OCT,NOV,DIC'}">
+								<select th:field="*{month}" class="form-control">
+									<option value="">- Mes -</option>
+									<option th:each="i : ${#numbers.sequence( 1, 12 )}"
+											th:with="index=${i < 10 ? '0' + i : i}"
+											th:value="${index}"
+											th:text="${index}">...</option>
+								</select>
+
+								<div th:if="${#fields.hasErrors('month')}" th:errors="*{month}" class="error">Name Error</div>
+
+							</div>
+
+							<div class="col-sm-4">
+								<select th:field="*{year}" class="form-control">
+									<option value="">- Año- </option>
+									<option th:each="i : ${#numbers.sequence( 2016, 2017 )}"
+											th:value="${i}"
+											th:text="${i}">...</option>
+								</select>
+
+								<div th:if="${#fields.hasErrors('year')}" th:errors="*{year}" class="error">Name Error</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label>Número del Ticket<br>(Letras y números, máximo 20 caracteres) *:</label>
+						<input th:field="*{numero}" class="form-control" maxlength="20">
+						<div th:if="${#fields.hasErrors('numero')}" th:errors="*{numero}" class="error">Name Error</div>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<label>Producto que compraste *:<br>&nbsp;</label>
+						<select th:field="*{producto.id}" class="form-control">
+							<option value="">- Selecciona -</option>
+							<option th:each="item : ${productos}" th:value="${item.id}" th:text="|${item.nombre}">- Selecciona -</option>
+						</select>
+
+						<div th:if="${#fields.hasErrors('producto.id')}" th:errors="*{producto.id}" class="error">Name Error</div>
+
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label>Tienda<br>(Letras y números, máximo 150 caracteres) *:</label>
+						<input th:field="*{tienda}" class="form-control" maxlength="150">
+						<div th:if="${#fields.hasErrors('tienda')}" th:errors="*{tienda}" class="error">Name Error</div>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<label>Monto del ticket $<br>(Solo números) *:</label>
+						<input th:field="*{monto}" class="form-control" maxlength="15">
+						<div th:if="${#fields.hasErrors('monto')}" th:errors="*{monto}" class="error">Name Error</div>
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label>Foto del Ticket<br>(jpeg, jpg, png, gif y máximo 5 megabytes):</label>
+
+						<input type="file" id="fileTemarioNombre" name="fileTemarioNombre" class="form-control btn btn-default input-upload" style="font-size: 13px; cursor: pointer;"
+							   th:data-header-name="${_csrf.headerName}"
+							   th:data-token="${_csrf.token}"
+							   th:data-url-upload="@{/file/upload.do}"
+							   data-view="participa/ticket/add"
+							   data-progress-bar="progressBar1"
+							   data-folder="tickets"
+							   data-session-name="TICKET_NOMBRE"
+							   data-session-file="TICKET_ARCHIVO"
+							   data-content-fragment="list-ticket-content"
+							   data-max-files="1"
+							   data-formats="jpeg, jpg, png, gif, dmg">
+
+						<div id="progressBar1" class="progress" style="margin-top: 5px; display: none;">
+							<div id="bar" class="progress-bar progress-bar-striped active bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+								0%
+							</div>
+						</div>
+
+						<div id="list-ticket-content" style="margin-top: 5px;">
+
+							<input id="imagenNombre" name="imagenNombre" type="hidden" th:value="${#session.getAttribute( 'TICKET_NOMBRE' )}" class="form-control">
+
+							<a th:if="${#session.getAttribute( 'TICKET_NOMBRE' ) != null}"
+							   class="btn btn-success"
+							   th:href="|@{/resources/cms_files/tickets}/${#session.getAttribute( 'TICKET_ARCHIVO' )}|" target="_blank">
+								<span class="glyphicon glyphicon-eye-open"></span>
+								<span th:text="${#session.getAttribute( 'TICKET_NOMBRE' )}"></span>
+							</a>
+
+						</div>
+
+						<div th:errors="*{imagenNombre}" class="error">Name Error</div>
+
+					</div>
+
+				</div>
+
+				<div class="row">&nbsp;</div>
+
+				<div class="text-center">
+					<a class="btn btn-primary" th:href="@{/participa/ticket/index/activo.do}">
+						<span class="glyphicon glyphicon-arrow-left"></span>
+						Regresar
+					</a>
+					<button type="submit" class="btn btn-primary">
+						<span class="glyphicon glyphicon-ok"></span>
+						Guardar
+					</button>
+
+				</div>
+
+				<input th:field="*{usuario.id}"  type="hidden">
+				<input th:field="*{status}"  type="hidden">
+				<input th:field="*{dateCreated}" type="hidden">
+
+			</form>
+
+		</div>
+
+	</div>
+
+</div>
+
+</body>
+</html>

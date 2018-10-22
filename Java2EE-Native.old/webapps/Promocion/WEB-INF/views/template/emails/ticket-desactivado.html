@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Confirmación de Registro</title>
+
+	<link th:href="#{application.WebRoot} + 'resources/css/bootstrap.min.css'" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container" style="max-width: 800px; margin: 0px auto 0px auto;">
+
+	<br><br>
+
+	<table class="table table-bordered">
+		<thead>
+		<tr>
+			<td class="text-center" style="background-color: #999; padding: 10px;">
+				<img th:src="#{application.WebRoot} + 'resources/images/logo.png'" width="150">
+			</td>
+		</tr>
+		</thead>
+
+		<tbody th:object="${ticket}">
+		<tr>
+			<td>
+				<div style="color: #000;" class="text-center">
+					<h2>¡¡ AVISO !!</h2>
+					<div style="font-size: 17px;">
+						<span style="font-weight: bold">
+							Estimado/a: <span th:text="|${ticket.usuario.nombre} ${ticket.usuario.apellidos}.|">Nombre...</span><br>
+							Te notificamos que tu ticket ha sido descalificado y desactivado.<br><br>
+
+						</span>
+
+						<div th:utext="|<strong>Número de ticket:</strong> *{numero}|"></div>
+						<div th:utext="|<strong>Tienda:</strong> *{tienda}|"></div>
+						<div th:utext="|<strong>Producto:</strong> *{producto.nombre}|"></div>
+						<div th:utext="|<strong>Monto:</strong> $${#numbers.formatDecimal(ticket.monto, 1, 'COMMA', 2, 'POINT')}|"></div>
+						<div th:utext="|<strong>Fecha de compra:</strong> ${#dates.format( ticket.fechaCompra, 'dd/MM/yyyy' )}|"></div>
+
+					</div>
+
+				</div>
+				<br><br>
+
+				<div class="text-center">
+					<a href="https://register.wacom.com/en-us/#/welcome" target="_blank" class="btn btn-primary">
+						<strong>Ir a WacomLatam.com</strong>
+					</a>
+				</div>
+
+			</td>
+		</tr>
+
+		</tbody>
+
+	</table>
+
+</div>
+
+</body>
+</html>

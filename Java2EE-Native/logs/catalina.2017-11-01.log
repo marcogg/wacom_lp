@@ -1,0 +1,33 @@
+01-Nov-2017 14:12:28.470 INFO [http-nio-8083-exec-20] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/Promocion] has started
+01-Nov-2017 14:12:28.591 WARNING [http-nio-8083-exec-20] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [Promocion] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+01-Nov-2017 14:12:28.592 WARNING [http-nio-8083-exec-20] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [Promocion] appears to have started a thread named [C3P0PooledConnectionPoolManager[identityToken->huv67y9rnmq51m1r4vhad|1b2d890e]-HelperThread-#1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.jdbc.ResultSetImpl.realClose(ResultSetImpl.java:7477)
+ com.mysql.jdbc.ResultSetImpl.close(ResultSetImpl.java:907)
+ com.mysql.jdbc.StatementImpl.realClose(StatementImpl.java:2478)
+ com.mysql.jdbc.ConnectionImpl.closeAllOpenStatements(ConnectionImpl.java:1584)
+ com.mysql.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:4364)
+ com.mysql.jdbc.ConnectionImpl.close(ConnectionImpl.java:1556)
+ com.mchange.v2.c3p0.impl.NewPooledConnection.close(NewPooledConnection.java:629)
+ com.mchange.v2.c3p0.impl.NewPooledConnection.closeMaybeCheckedOut(NewPooledConnection.java:259)
+ com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.destroyResource(C3P0PooledConnectionPool.java:619)
+ com.mchange.v2.resourcepool.BasicResourcePool$1DestroyResourceTask.run(BasicResourcePool.java:1024)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:648)
+01-Nov-2017 14:12:28.593 WARNING [http-nio-8083-exec-20] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [Promocion] appears to have started a thread named [C3P0PooledConnectionPoolManager[identityToken->huv67y9rnmq51m1r4vhad|1b2d890e]-HelperThread-#2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.jdbc.ConnectionImpl.getCharacterSetMetadata(ConnectionImpl.java:2798)
+ com.mysql.jdbc.Field.getStringFromBytes(Field.java:710)
+ com.mysql.jdbc.Field.getOriginalName(Field.java:652)
+ com.mysql.jdbc.ResultSetImpl.buildIndexMapping(ResultSetImpl.java:749)
+ com.mysql.jdbc.ResultSetImpl.findColumn(ResultSetImpl.java:1108)
+ com.mysql.jdbc.DatabaseMetaData$9.forEach(DatabaseMetaData.java:5030)
+ com.mysql.jdbc.IterateBlock.doForAll(IterateBlock.java:51)
+ com.mysql.jdbc.DatabaseMetaData.getTables(DatabaseMetaData.java:4962)
+ com.mchange.v2.c3p0.impl.DefaultConnectionTester.activeCheckConnectionNoQuery(DefaultConnectionTester.java:197)
+ com.mchange.v2.c3p0.impl.DefaultConnectionTester.activeCheckConnection(DefaultConnectionTester.java:74)
+ com.mchange.v2.c3p0.AbstractConnectionTester.activeCheckConnection(AbstractConnectionTester.java:79)
+ com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.testPooledConnection(C3P0PooledConnectionPool.java:503)
+ com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.testPooledConnection(C3P0PooledConnectionPool.java:463)
+ com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.refurbishIdleResource(C3P0PooledConnectionPool.java:435)
+ com.mchange.v2.resourcepool.BasicResourcePool$AsyncTestIdleResourceTask.run(BasicResourcePool.java:2151)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:648)
+01-Nov-2017 14:12:35.902 INFO [http-nio-8083-exec-20] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/Promocion] is completed
+01-Nov-2017 14:21:22.279 WARNING [http-nio-8083-exec-28] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [Promocion] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.

@@ -1,0 +1,4 @@
+66.249.75.31 - - [18/Jun/2017:14:08:53 -0500] "GET /Promocion/login.do HTTP/1.1" 200 13022
+66.249.75.30 - - [18/Jun/2017:14:08:55 -0500] "GET /Promocion/resources/css/bootstrap-select.min.css HTTP/1.1" 200 6432
+66.249.75.1 - - [18/Jun/2017:14:08:55 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+66.249.75.30 - - [18/Jun/2017:14:08:55 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2622

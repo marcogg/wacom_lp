@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:03:35:09 -0600] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:03:35:13 -0600] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957

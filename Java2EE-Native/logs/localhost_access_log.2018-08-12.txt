@@ -1,0 +1,1 @@
+0:0:0:0:0:0:0:1 - - [12/Aug/2018:14:03:36 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 200 27311

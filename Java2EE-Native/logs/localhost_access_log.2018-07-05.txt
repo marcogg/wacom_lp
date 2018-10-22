@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [05/Jul/2018:18:34:09 -0500] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [05/Jul/2018:18:34:10 -0500] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [05/Jul/2018:19:10:29 -0500] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [05/Jul/2018:19:20:24 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957

@@ -1,0 +1,10 @@
+01-Nov-2017 14:12:28.471 INFO [http-nio-8083-exec-20] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'spring-mvc'
+01-Nov-2017 14:12:28.547 INFO [http-nio-8083-exec-20] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+01-Nov-2017 14:12:31.606 INFO [http-nio-8083-exec-20] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+01-Nov-2017 14:12:31.713 INFO [http-nio-8083-exec-20] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+01-Nov-2017 14:12:35.884 INFO [http-nio-8083-exec-20] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'spring-mvc'
+01-Nov-2017 14:21:22.227 INFO [http-nio-8083-exec-28] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'spring-mvc'
+01-Nov-2017 14:21:22.239 INFO [http-nio-8083-exec-28] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+01-Nov-2017 14:21:25.694 INFO [http-nio-8083-exec-27] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+01-Nov-2017 14:21:25.766 INFO [http-nio-8083-exec-27] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+01-Nov-2017 14:21:29.622 INFO [http-nio-8083-exec-27] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'spring-mvc'

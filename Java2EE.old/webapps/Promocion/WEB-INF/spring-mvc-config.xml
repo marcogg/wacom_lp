@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+
+    <context:annotation-config/>
+
+    <!-- Specifying base package of the Components like Controller, Service, DAO -->
+    <context:component-scan base-package="com.dsysprog.wacom"/>
+
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
+    <!-- **************************************************************** -->
+    <!--  CONVERSION SERVICE                                              -->
+    <!--  Standard Spring formatting-enabled implementation               -->
+    <!-- **************************************************************** -->
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="com.dsysprog.wacom.component.DateFormatter"/>
+            </set>
+        </property>
+    </bean>
+
+    <!-- Getting Database properties
+    <context:property-placeholder location="classpath:application-prod.properties,classpath:Messages_es.properties"/>
+    <context:property-placeholder location="classpath*:*.properties"/>
+    -->
+
+    <!-- Creates the JSR-303 Validator - ERRORS -->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="validationMessageSource" ref="messageSource"/>
+    </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>Messages</value>
+                <value>Messages_us</value>
+                <value>ValidationMessages</value>
+                <value>Views</value>
+            </list>
+        </property>
+
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="useCodeAsDefaultMessage" value="true"/>
+    </bean>
+
+
+    <bean id="messageAccessor" class="org.springframework.context.support.MessageSourceAccessor">
+        <constructor-arg index="0" ref="messageSource"/>
+    </bean>
+
+    <!-- Specifying the Resource location to load JS, CSS, Images etc -->
+    <mvc:resources mapping="/resources/**" location="/resources/" cache-period="31556926"/>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- setting maximum upload size -->
+        <property name="maxUploadSize" value="10000000000"/>
+    </bean>
+
+    <!-- DataSource : com.mchange.v2.c3p0.ComboPooledDataSource -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <!-- Base de datos -->
+        <property name="driverClass" value="${database.driverClass}"/>
+        <property name="jdbcUrl" value="${database.url}"/>
+        <property name="user" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+
+        <!-- Pool de conexiones -->
+        <property name="checkoutTimeout" value="${c3p0.checkoutTimeout}"/>
+        <property name="idleConnectionTestPeriod" value="${c3p0.idleConnectionTestPeriod}"/>
+        <property name="initialPoolSize" value="${c3p0.initialPoolSize}"/>
+        <property name="maxIdleTime" value="${c3p0.maxIdleTime}"/>
+        <property name="maxPoolSize" value="${c3p0.maxPoolSize}"/>
+        <property name="minPoolSize" value="${c3p0.minPoolSize}"/>
+        <property name="maxStatements" value="${c3p0.maxStatements}"/>
+
+    </bean>
+
+    <!-- Hibernate SessionFactory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+
+        <!-- Configuración Hibernate -->
+        <!--
+        <property name="configLocation">
+            <value>classpath:config/hibernate.cfg.xml</value>
+        </property>
+        -->
+
+        <!-- Propiedades de configuración -->
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+                <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+                <prop key="hibernate.current_session_context">${hibernate.current_session_context}</prop>
+                <prop key="hibernate.generate_statistics">${hibernate.generate_statistics}</prop>
+            </props>
+        </property>
+
+        <!-- Encontrar Entidades -->
+        <property name="packagesToScan" value="com.dsysprog.wacom.model"/>
+
+    </bean>
+
+    <!--
+        Production implementation of the JavaMailSender interface, supporting
+	    both JavaMail MimeMessages and Spring SimpleMailMessages
+	-->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host"     value="${spring.mail.host}"/>
+        <property name="port"     value="${spring.mail.port}"/>
+        <property name="username" value="${spring.mail.username}"/>
+        <property name="password" value="${spring.mail.password}"/>
+
+        <!-- The name of the property, following JavaBean naming conventions -->
+
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.transport.protocol">${spring.mail.transport.protocol}</prop>
+                <prop key="mail.smtp.auth">${spring.mail.smtp.auth}</prop>
+                <prop key="mail.smtp.starttls.enable">${spring.mail.smtp.starttls.enable}</prop>
+                <prop key="mail.debug">${spring.mail.debug}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- You can have some pre-configured messagess also which are ready to send -->
+    <bean id="simpleMailMessage" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from"    value="${spring.mail.username}"/>
+        <property name="to"      value="${spring.mail.username}"/>
+    </bean>
+
+    <!-- Bean de Email -->
+    <bean id="applicationMailerService" class="com.dsysprog.wacom.service.impl.persona.ApplicationMailerServiceImpl">
+        <property name="mailSender" ref="mailSender" />
+        <property name="simpleMailMessage" ref="simpleMailMessage" />
+    </bean>
+
+    <!-- Transaction -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- Permitir transacciones -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!-- Security -->
+    <import resource="classpath:config/spring-security-config.xml"/>
+
+    <!-- Thymeleaf -->
+    <import resource="classpath:config/spring-thymeleaf-config.xml"/>
+
+    <!-- Schedule -->
+    <import resource="classpath:config/spring-schedule-config.xml"/>
+
+    <!-- Interceptores: Validar Fecha de promoción -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/participa/ticket/add.do"/>
+            <mvc:mapping path="/participa/ticket/edit/{id}.do"/>
+            <mvc:mapping path="/participa/ticket/edit/"/>
+
+            <!-- Interceptor -->
+            <bean id="promocionDateFinishInterceptor" class="com.dsysprog.wacom.interceptor.PromocionDateFinishInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+
+    <!-- Environment -->
+    <beans profile="development">
+        <!-- allows for ${} replacement in the spring xml configuration from the
+            application-default.properties, application-dev files on the classpath -->
+        <context:property-placeholder
+                location="classpath:application-dev.properties,classpath:log4j-dev.properties"
+                ignore-unresolvable="true" />
+
+    </beans>
+
+    <beans profile="production">
+        <!-- allows for ${} replacement in the spring xml configuration from the
+            application-default.properties, application-prod files on the classpath -->
+        <context:property-placeholder
+                location="classpath:application-prod.properties,classpath:log4j-prod.properties"
+                ignore-unresolvable="true" />
+
+    </beans>
+
+
+</beans>

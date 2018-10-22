@@ -1,0 +1,3 @@
+06-Aug-2018 09:06:02.958 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+06-Aug-2018 09:06:03.180 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+06-Aug-2018 09:06:44.629 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'spring-mvc'

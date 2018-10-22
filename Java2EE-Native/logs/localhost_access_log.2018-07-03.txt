@@ -1,0 +1,3 @@
+0:0:0:0:0:0:0:1 - - [03/Jul/2018:10:25:19 -0500] "GET /Promocion/resources/js/jquery.twbsPagination.js HTTP/1.1" 200 11482
+0:0:0:0:0:0:0:1 - - [03/Jul/2018:10:25:20 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [03/Jul/2018:10:25:21 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957

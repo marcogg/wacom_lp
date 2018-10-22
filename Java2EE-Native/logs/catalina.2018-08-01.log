@@ -1,0 +1,64 @@
+01-Aug-2018 13:25:24.238 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.20
+01-Aug-2018 13:25:24.244 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2017 21:35:49 UTC
+01-Aug-2018 13:25:24.244 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.20.0
+01-Aug-2018 13:25:24.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+01-Aug-2018 13:25:24.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.10.0-862.9.1.el7.x86_64
+01-Aug-2018 13:25:24.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+01-Aug-2018 13:25:24.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/jdk1.8.0_144/jre
+01-Aug-2018 13:25:24.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_144-b01
+01-Aug-2018 13:25:24.246 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+01-Aug-2018 13:25:24.246 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/wacom/public_html/Java2EE-Native
+01-Aug-2018 13:25:24.246 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/wacom/public_html/Java2EE-Native
+01-Aug-2018 13:25:24.246 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/wacom/www/Java2EE-Native//conf/logging.properties
+01-Aug-2018 13:25:24.247 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+01-Aug-2018 13:25:24.247 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+01-Aug-2018 13:25:24.247 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+01-Aug-2018 13:25:24.247 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.library.path=/home/wacom/www/Java2EE-Native/lib
+01-Aug-2018 13:25:24.247 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/wacom/www/Java2EE-Native/
+01-Aug-2018 13:25:24.247 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/wacom/www/Java2EE-Native/
+01-Aug-2018 13:25:24.248 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/wacom/www/Java2EE-Native//temp
+01-Aug-2018 13:25:24.248 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.12] using APR version [1.6.3].
+01-Aug-2018 13:25:24.248 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+01-Aug-2018 13:25:24.248 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+01-Aug-2018 13:25:24.527 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8083"]
+01-Aug-2018 13:25:24.572 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+01-Aug-2018 13:25:24.579 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8011"]
+01-Aug-2018 13:25:24.584 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+01-Aug-2018 13:25:24.585 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1286 ms
+01-Aug-2018 13:25:24.632 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+01-Aug-2018 13:25:24.632 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.20
+01-Aug-2018 13:25:24.687 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/wacom/public_html/Java2EE-Native/webapps/Promocion.war]
+01-Aug-2018 13:25:30.145 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+01-Aug-2018 13:27:12.591 WARNING [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [90,606] milliseconds.
+01-Aug-2018 13:27:12.600 SEVERE [localhost-startStop-1] org.apache.catalina.session.StandardManager.startInternal Exception loading sessions from persistent storage
+ java.io.EOFException
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2638)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at org.apache.catalina.util.CustomObjectInputStream.<init>(CustomObjectInputStream.java:95)
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:209)
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:356)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5224)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:752)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:728)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:734)
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:988)
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1860)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+01-Aug-2018 13:27:12.656 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/wacom/public_html/Java2EE-Native/webapps/Promocion.war] has finished in [107,969] ms
+01-Aug-2018 13:27:12.659 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/wacom/public_html/Java2EE-Native/webapps/host-manager]
+01-Aug-2018 13:27:12.687 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/wacom/public_html/Java2EE-Native/webapps/host-manager] has finished in [28] ms
+01-Aug-2018 13:27:12.687 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/wacom/public_html/Java2EE-Native/webapps/manager]
+01-Aug-2018 13:27:12.704 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/wacom/public_html/Java2EE-Native/webapps/manager] has finished in [16] ms
+01-Aug-2018 13:27:12.713 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8083"]
+01-Aug-2018 13:27:12.723 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8011"]
+01-Aug-2018 13:27:12.727 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 108142 ms

@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [04/Mar/2018:05:46:29 -0600] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/Mar/2018:05:46:30 -0600] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [04/Mar/2018:05:46:36 -0600] "GET /Promocion/resources/js/functions-system.js HTTP/1.1" 200 3529
+0:0:0:0:0:0:0:1 - - [04/Mar/2018:05:46:37 -0600] "GET /Promocion/resources/js/bootstrap-session-timeout.js HTTP/1.1" 200 10199
+0:0:0:0:0:0:0:1 - - [04/Mar/2018:05:46:42 -0600] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [04/Mar/2018:05:46:43 -0600] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [04/Mar/2018:10:50:09 -0600] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [04/Mar/2018:10:50:09 -0600] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625

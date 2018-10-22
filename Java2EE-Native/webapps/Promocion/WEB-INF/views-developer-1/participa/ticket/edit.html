@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/frontend/main}">
+
+<head>
+	<title>...</title>
+</head>
+
+<body>
+
+
+<div layout:fragment="content-fragment" class="container form-width">
+
+	<div layout:include="layout/frontend/messages :: messages-fragment">Messages...</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Editar Ticket</h3>
+		</div>
+		<div class="panel-body">
+			<h3 class="text-center">
+				Te recordarmos que al momento de dar de alta un ticket,<br>
+				no es necesario que subas tu diseño. Tienes un tiempo máximo de 30 días para poder subir tu diseño, de lo contrario,<br>
+				el registro de tu ticket sera desactivado.
+			</h3>
+
+			<h3 class="text-center" style="color: #000;">Los campos con(*) son necesarios.</h3>
+			<br>
+
+			<form th:object="${ticket}" id="ticket" name="ticket" method="post" th:action="@{/participa/ticket/edit.do}" th:with="token=${_csrf.token}">
+
+				<div class="form-group">
+					<label>Número del Ticket:</label>
+					<input th:field="*{numero}" class="form-control" maxlength="30" readonly>
+					<div th:if="${#fields.hasErrors('numero')}" th:errors="*{numero}" class="error">Name Error</div>
+				</div>
+
+				<div class="form-group">
+					<label>Título del Diseño *:</label>
+					<input th:field="*{titulo}" class="form-control" maxlength="100" readonly>
+					<div th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}" class="error">Name Error</div>
+				</div>
+
+				<div class="form-group">
+					<label>Descripción del producto:</label>
+					<input th:field="*{descripcion}" class="form-control" maxlength="255" readonly>
+					<div th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}" class="error">Name Error</div>
+				</div>
+
+				<div class="form-group">
+					<label>Tienda:</label>
+					<input th:field="*{tienda}" class="form-control" maxlength="150" readonly>
+					<div th:if="${#fields.hasErrors('tienda')}" th:errors="*{tienda}" class="error">Name Error</div>
+				</div>
+
+				<div class="form-group">
+					<label>Monto:</label>
+					<input th:field="*{monto}" class="form-control" maxlength="15" readonly>
+					<div th:if="${#fields.hasErrors('monto')}" th:errors="*{monto}" class="error">Name Error</div>
+				</div>
+
+				<div class="form-group">
+					<label>Imagen del Ticket(png, jpg, jpeg y máximo 5 megabytes):</label>
+					<input th:field="*{imagen}" type="hidden">
+
+					<div th:if="*{imagen == null || imagen == ''}">
+						<input th:field="*{imagenForm}" type="hidden">
+						<br>
+						<button type="button" class="btn btn-danger btn-upload" data-toggle="modal" data-name-field="imagen" data-megabytes="5" data-extensions="png, jpg, jpeg"  data-target="#uploadModal"
+						        style="width: 150px; margin-bottom: 5px;">
+							SUBIR MI DISEÑO...
+						</button>
+					</div>
+
+					<div id="imagen-preview-form">
+						<a th:if="*{imagenFormUrl != null}" th:href="@{${ticket.imagenFormUrl}}" target="_blank">
+							<img class="img-thumbnail" th:src="@{${ticket.imagenFormUrl}}" style="max-width: 200px; border: 1px solid #ccc; border-radius: 3px;">
+						</a>
+					</div>
+
+					<div th:if="*{#fields.hasErrors('imagen')}" th:errors="*{imagen}" class="error">Name Error</div>
+				</div>
+
+				<div class="form-group">
+					<label>Imagen del Diseño(png, jpg, jpeg y máximo 5 megabytes):</label>
+					<input th:field="*{disenyo}" type="hidden">
+
+					<div th:if="*{disenyo == null || disenyo == ''}">
+						<input th:field="*{disenyoForm}" type="hidden">
+						<br>
+						<button type="button" class="btn btn-danger btn-upload" data-toggle="modal" data-name-field="disenyo" data-megabytes="5" data-extensions="png, jpg, jpeg" data-target="#uploadModal"
+						        style="width: 150px; margin-bottom: 5px;">
+							SUBIR MI DISEÑO...
+						</button>
+					</div>
+
+					<div id="disenyo-preview-form">
+						<a th:if="*{disenyoFormUrl != null}" th:href="@{${ticket.disenyoFormUrl}}" target="_blank">
+							<img class="img-thumbnail" th:src="@{${ticket.disenyoFormUrl}}" style="max-width: 200px; border: 1px solid #ccc; border-radius: 3px;">
+						</a>
+					</div>
+
+					<div th:if="*{#fields.hasErrors('disenyo')}" th:errors="*{disenyo}" class="error">Name Error</div>
+				</div>
+
+				<div class="row">&nbsp;</div>
+
+				<div class="text-center">
+					<a class="btn btn-primary" th:href="@{/participa/ticket/index/activo.do}">
+						<span class="glyphicon glyphicon-arrow-left"></span>
+						Regresar
+					</a>
+					<button th:if="*{disenyo == null || disenyo == ''}" type="submit" class="btn btn-primary">
+						<span class="glyphicon glyphicon-ok"></span>
+						Guardar
+					</button>
+
+				</div>
+
+				<input th:field="*{id}"     type="hidden">
+				<input th:field="*{status}"  type="hidden">
+
+			</form>
+
+		</div>
+
+	</div>
+
+	<!-- Template Upload -->
+	<div layout:include="layout/utils/upload :: upload-fragment">Upload...</div>
+
+</div>
+
+</body>
+</html>

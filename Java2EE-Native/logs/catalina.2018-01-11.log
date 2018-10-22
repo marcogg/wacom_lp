@@ -1,0 +1,40 @@
+11-Jan-2018 05:18:51.105 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.20
+11-Jan-2018 05:18:51.110 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2017 21:35:49 UTC
+11-Jan-2018 05:18:51.111 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.20.0
+11-Jan-2018 05:18:51.111 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+11-Jan-2018 05:18:51.111 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.10.0-693.11.6.el7.x86_64
+11-Jan-2018 05:18:51.111 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+11-Jan-2018 05:18:51.111 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/jdk1.8.0_144/jre
+11-Jan-2018 05:18:51.111 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_144-b01
+11-Jan-2018 05:18:51.111 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+11-Jan-2018 05:18:51.112 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/wacom/public_html/Java2EE-Native
+11-Jan-2018 05:18:51.112 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/wacom/public_html/Java2EE-Native
+11-Jan-2018 05:18:51.112 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/wacom/www/Java2EE-Native//conf/logging.properties
+11-Jan-2018 05:18:51.112 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Jan-2018 05:18:51.113 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+11-Jan-2018 05:18:51.113 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Jan-2018 05:18:51.113 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.library.path=/home/wacom/www/Java2EE-Native/lib
+11-Jan-2018 05:18:51.113 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/wacom/www/Java2EE-Native/
+11-Jan-2018 05:18:51.113 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/wacom/www/Java2EE-Native/
+11-Jan-2018 05:18:51.113 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/wacom/www/Java2EE-Native//temp
+11-Jan-2018 05:18:51.114 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.12] using APR version [1.6.3].
+11-Jan-2018 05:18:51.114 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+11-Jan-2018 05:18:51.114 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+11-Jan-2018 05:18:51.384 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8083"]
+11-Jan-2018 05:18:51.428 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+11-Jan-2018 05:18:51.433 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8011"]
+11-Jan-2018 05:18:51.437 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+11-Jan-2018 05:18:51.438 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1231 ms
+11-Jan-2018 05:18:51.482 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+11-Jan-2018 05:18:51.483 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.20
+11-Jan-2018 05:18:51.551 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/wacom/public_html/Java2EE-Native/webapps/Promocion.war]
+11-Jan-2018 05:18:55.956 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-Jan-2018 05:21:58.592 WARNING [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [172,451] milliseconds.
+11-Jan-2018 05:21:58.647 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/wacom/public_html/Java2EE-Native/webapps/Promocion.war] has finished in [187,096] ms
+11-Jan-2018 05:21:58.648 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/wacom/public_html/Java2EE-Native/webapps/host-manager]
+11-Jan-2018 05:21:58.671 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/wacom/public_html/Java2EE-Native/webapps/host-manager] has finished in [23] ms
+11-Jan-2018 05:21:58.672 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/wacom/public_html/Java2EE-Native/webapps/manager]
+11-Jan-2018 05:21:58.686 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/wacom/public_html/Java2EE-Native/webapps/manager] has finished in [14] ms
+11-Jan-2018 05:21:58.690 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8083"]
+11-Jan-2018 05:21:58.697 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8011"]
+11-Jan-2018 05:21:58.698 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 187259 ms

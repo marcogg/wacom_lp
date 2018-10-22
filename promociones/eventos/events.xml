@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<monthly>
+
+
+	<event>
+		<id>1</id>
+		<name>Prodiseño, IEST, Tampico</name>
+		<startdate>2017-3-16</startdate>
+		<enddate>2017-3-18</enddate>
+		<starttime>09:00</starttime>
+		<endtime>20:00</endtime>
+		<event>Tampico, Tams.</event>
+		<color>#ffb128</color>
+		<url></url>
+	</event>
+
+	<event>
+		<id>2</id>
+		<name>Festival de diseño, Universidad Veracruzana</name>
+		<startdate>2017-5-17</startdate>
+		<enddate></enddate>
+		<starttime></starttime>
+		<endtime></endtime>
+		<color>#28cbff</color>
+		<url></url>
+	</event>
+
+	<event>
+		<id>3</id>
+		<name>ARQfestival, Teatro Diana, Gdl.</name>
+		<startdate>2017-10-26</startdate>
+		<enddate>2017-10-27</enddate>
+		<starttime>9:00</starttime>
+		<endtime>20:00</endtime>
+		<color>#9cc370</color>
+		<url></url>
+	</event>
+
+	<event>
+		<id>4</id>
+		<name>DesignFest, Teatro Diana, Gdl.</name>
+		<startdate>2017-10-19</startdate>
+		<enddate>2017-10-21</enddate>
+		<starttime>9:00</starttime>
+		<endtime>20:00</endtime>
+		<color>#28cbff</color>
+		<url></url>
+	</event>
+
+	<event>
+		<id>5</id>
+		<name>DM10, Mazatlán, Sin.</name>
+		<startdate>2017-10-5</startdate>
+		<enddate>2017-10-7</enddate>
+		<starttime>9:00</starttime>
+		<endtime>20:00</endtime>
+		<color>#9f4b99</color>
+		<url></url>
+	</event>
+	
+	<event>
+		<id>6</id>
+		<name>MASTER CLASS 1 con Wacom Mobile Studio Pro, en Universidad ESCENA</name>
+		<startdate>2017-3-21</startdate>
+		<enddate></enddate>
+		<starttime>15:00</starttime>
+		<endtime>17:00</endtime>
+		<event></event>
+		<color>#ffb128</color>
+		<url></url>
+	</event>
+	
+	<event>
+		<id>7</id>
+		<name>MASTER CLASS 2 con Wacom Mobile Studio Pro, en Universidad ESCENA</name>
+		<startdate>2017-3-21</startdate>
+		<enddate></enddate>
+		<starttime>17:00</starttime>
+		<endtime>19:00</endtime>
+		<event></event>
+		<color>#28cbff</color>
+		<url></url>
+	</event>
+	
+	<event>
+		<id>8</id>
+		<name>MASTER CLASS 1 con Intuos Pro Paper, en Tec de Monterrey EDO. MEX.</name>
+		<startdate>2017-3-21</startdate>
+		<enddate></enddate>
+		<starttime>10:00</starttime>
+		<endtime>12:00</endtime>
+		<event></event>
+		<color>#ffb128</color>
+		<url></url>
+	</event>
+	
+	<event>
+		<id>9</id>
+		<name>MASTER CLASS 2 con Intuos Pro Paper, en Tec de Monterrey EDO. MEX.</name>
+		<startdate>2017-3-21</startdate>
+		<enddate></enddate>
+		<starttime>17:00</starttime>
+		<endtime>19:00</endtime>
+		<event></event>
+		<color>#28cbff</color>
+		<url></url>
+	</event>
+	
+	
+	<event>
+		<id>10</id>
+		<name>FB Live con Intuos Pro Paper, en Corporativo Bes Buy</name>
+		<startdate>2017-3-23</startdate>
+		<enddate></enddate>
+		<starttime>10:00</starttime>
+		<endtime></endtime>
+		<event></event>
+		<color>#9f4b99</color>
+		<url></url>
+	</event>
+	
+	
+	<event>
+		<id>11</id>
+		<name>MASTER CLASS 1 con Wacom Mobile Studio Pro, en Universidad Ibero Santa Fe</name>
+		<startdate>2017-3-23</startdate>
+		<enddate></enddate>
+		<starttime>11:00</starttime>
+		<endtime>12:00</endtime>
+		<event></event>
+		<color>#ffb128</color>
+		<url></url>
+	</event>
+	
+	<event>
+		<id>12</id>
+		<name>MASTER CLASS 2 con Wacom Mobile Studio Pro, en Lumen RELOX</name>
+		<startdate>2017-3-23</startdate>
+		<enddate></enddate>
+		<starttime>18:30</starttime>
+		<endtime>20:30</endtime>
+		<event></event>
+		<color>#28cbff</color>
+		<url></url>
+	</event>
+	
+	
+	<event>
+		<id>10</id>
+		<name>FB Live con Wacom Mobile Studio Pro, en Doméstico Bar</name>
+		<startdate>2017-3-24</startdate>
+		<enddate></enddate>
+		<starttime>19:00</starttime>
+		<endtime>22:00</endtime>
+		<event></event>
+		<color>#9f4b99</color>
+		<url></url>
+	</event>
+
+
+
+
+</monthly>

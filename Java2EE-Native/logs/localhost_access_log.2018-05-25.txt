@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [25/May/2018:14:20:53 -0500] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/May/2018:21:38:46 -0500] "GET /Promocion/finish.do HTTP/1.1" 200 20024

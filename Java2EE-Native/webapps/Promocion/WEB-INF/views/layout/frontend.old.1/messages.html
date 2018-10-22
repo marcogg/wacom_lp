@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<!-- Fragmento de algún mensaje -->
+<div layout:fragment="messages-fragment" id="mensajes">
+
+	<div id="info" th:if="${info != null}" class="alert alert-info text-center" style="display: none;">
+		<div style="font-size: 35px; font-weight: 600;">¡¡ Aviso !!</div>
+		<div style="font-size: 25px; line-height: normal; margin-top: 10px;" th:utext="${info}"></div>
+
+		<script type="text/javascript">
+			$("#info").show( 500 );
+		</script>
+
+	</div>
+
+	<div id="success" th:if="${success != null}" class="alert alert-success text-center" style="display: none;">
+		<div style="font-size: 35px; font-weight: 600;">¡¡ Aviso !!</div>
+		<div style="font-size: 25px; line-height: normal; margin-top: 10px;" th:utext="${success}"></div>
+
+		<script type="text/javascript">
+			$("#success").show( 500 );
+		</script>
+
+	</div>
+
+	<div id="danger" th:if="${danger != null}" class="alert alert-danger text-center" style="display: none;">
+		<div style="font-size: 35px; font-weight: 600;">¡¡ Aviso !!</div>
+		<div style="font-size: 25px; line-height: normal; margin-top: 10px;" th:utext="${danger}"></div>
+
+		<script type="text/javascript">
+			$("#danger").show( 500 );
+		</script>
+
+	</div>
+
+	<div id="warning" th:if="${warning != null}" class="alert alert-warning text-center" style="display: none;">
+		<div style="font-size: 35px; font-weight: 600;">¡¡ Aviso !!</div>
+		<div style="font-size: 25px; line-height: normal; margin-top: 10px;" th:utext="${warning}"></div>
+
+		<script type="text/javascript">
+			$("#warning").show( 500 );
+		</script>
+
+	</div>
+
+</div>
+
+</body>
+</html>

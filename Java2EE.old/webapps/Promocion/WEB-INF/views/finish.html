@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout/frontend/main}">
+
+<head>
+	<title>Login...</title>
+</head>
+
+<body>
+
+<div id="content" layout:fragment="content-fragment" class="container form-width">
+
+	<div id="finish" class="panel panel-primary" style="display: none;">
+		<div class="panel-heading">
+			<h4 class="panel-title text-uppercase">AVISO</h4>
+		</div>
+		<div class="panel-body">
+			<!--
+			<span th:text="${#calendars.format(#calendars.createNow(), 'dd MMM yyyy HH:mm')}"></span>
+			-->
+			
+			<h1 class="text-center text-uppercase" style="color: #C70039">
+				¡¡ Lo sentimos !!<br><br>
+				La fecha de promoción para subir<br>tus tickets ha finalizado.<br>
+			</h1>
+			<br>
+			<br>
+
+			<div align="center">
+				<a th:href="@{/participa/ticket/index-all.do}" class="btn btn-primary" style="width: 30%;">Aceptar</a>
+			</div>
+
+			<br>
+
+		</div>
+
+	</div>
+
+
+	<script type="text/javascript">
+		$(function () {
+            $( "#finish" ).hide();
+            $( "#finish" ).show(500);
+
+        })
+	</script>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+
+</head>
+<body>
+
+<section layout:fragment="header-fragment">
+
+
+
+	<!--- TIPO HEADER ---><!--header-semi-transparent-->
+	<header id="header" class="header-narrow " data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 1, 'stickySetTop': '1'}">
+
+
+		<div class="header-body">
+			<div class="header-container container">
+				<div class="header-row">
+					<div class="header-column">
+						<div class="header-logo">
+							<a href="http://wacomlatam.com">
+								<img alt="Wacom LATAM" width="63" height="59" th:src="|${path}img/logo.png|">
+							</a>
+						</div>
+					</div>
+
+
+					<div class="header-column">
+
+						<div class="header-row">
+
+							<!--- TIPO NAVEGACIÓN OVER --->
+							<div class="header-nav">
+
+
+								<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+									<i class="fa fa-bars"></i>
+								</button>
+
+								<ul class="header-social-icons social-icons hidden-xs show-lg show-md show-sm">
+
+									<!--
+                                        <li class="social-icons-facebook"><a href="https://www.facebook.com/becArtemx" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+
+                                        <li class="social-icons-instagram">
+                                        <a href="https://www.instagram.com/becarte.wacom" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+
+                                        <li class="social-icons-twitter"><a href="https://twitter.com/b_wacom" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li> -->
+
+								</ul>
+
+								<div class="header-nav-main header-nav-main-square header-nav-main-effect-3 header-nav-main-sub-effect-1 collapse">
+
+
+									<nav>
+										<ul class="nav nav-pills" id="mainNav">
+											<li>
+												<a data-hash data-hash-offset="70" href="http://wacomlatam.com">Inicio</a>
+											</li>
+
+
+											<!--
+                                            <li>
+                                                <a data-hash data-hash-offset="70" href="index.html#detalles">COMO PARTICIPAR</a>
+                                            </li>-->
+											<!--
+                                            <li>
+                                                <a data-hash data-hash-offset="70" href="index.html#comprar">Donde comprar</a>
+                                            </li>-->
+
+
+											<li class="dropdown">
+												<a data-hash data-hash-offset="70" href="/terminos-y-condiciones-wacom-adobe.html">Términos y Condiciones</a>
+											</li>
+
+
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+
+
+
+
+
+
+	<div role="main" class="main" id="home">
+
+
+
+		<div class="hidden-lg hidden-md show-sm show-xs p-none m-none center" th:style="|background:url(${path}img/slides/purple-pixels_bg.jpg) top center; background-size: cover;|">
+
+			<!---  <img src="img/banner-wacom-responsive-sm.jpg" class="img-responsive hidden-lg hidden-md hidden-sm show-xs" alt=""/> --->
+
+			<img th:src="|${path}img/banner-wacom-responsive.png|" class="img-responsive padding-responsivo-menu" alt=""/>
+			<!--- Botón PASOS DINÁMICA --->
+			<!--<a class="tp-caption enjoy-css btn btn-sm btn-slider-action borde-btn-pixeles2" href="http://www.wacomlatam.com"><span style="font-size:12px; padding:8px;">CANJEAR OFERTA</span></a>-->
+
+
+			<!--- Botón PARTICIPAR
+			<a class="tp-caption" href="http://www.wacom.com/en-us/products/pen-tablets/intuos-pro-small" target="_blank"><span><img th:src="|${path}images/logo-btn-intuos-pro-small.png|">  </span></a>
+			-->
+
+		</div>
+
+
+
+
+
+		<div class="slider-container rev_slider_wrapper hidden-sm hidden-xs">
+			<div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 620}">
+				<ul>
+					<li data-transition="fade">
+
+						<img th:src="|${path}img/slides/purple-pixels_bg.jpg|"
+							 alt=""
+							 data-bgposition="center center"
+							 data-bgfit="cover"
+							 data-bgrepeat="no-repeat"
+							 data-kenburns="on"
+							 data-duration="9000"
+							 data-ease="Linear.easeNone"
+							 data-scalestart="115"
+							 data-scaleend="100"
+							 data-rotatestart="0"
+							 data-rotateend="0"
+							 data-offsetstart="0 -200"
+							 data-offsetend="0 200"
+							 data-bgparallax="0"
+							 class="rev-slidebg">
+						<!--
+                                                        <div class="tp-caption"
+                                                            data-x="125"
+                                                            data-y="250"
+                                                            data-start="1000"
+                                                            data-transform_in="x:[-300%];opacity:0;s:500;">
+                                                            <img src="img/slides/slide-title-border.png" alt=""></div>-->
+
+						<div class="tp-caption top-label center"
+							 data-x="20"
+							 data-y="155"
+							 data-start="500"
+							 data-transform_in="y:[-300%];opacity:0;s:500;">
+                                   <span class="text-uppercase" style="font-size:40px; font-weight:200; line-height: normal;">
+                                   Adquiere una tableta</span>
+						</div>
+
+						<!--<div class="tp-caption"
+                            data-x="630"
+                            data-y="240"
+                            data-start="1000"
+                            data-transform_in="x:[300%];opacity:0;s:500;"><img src="img/slides/slide-title-border.png" alt=""></div>-->
+
+						<div class="tp-caption main-label"
+							 data-x="20"
+							 data-y="220"
+							 data-start="800"
+							 data-whitespace="nowrap"
+							 data-transform_in="y:[100%];s:500;"
+							 data-transform_out="opacity:0;s:500;"
+							 data-mask_in="x:0px;y:0px;">
+							<!--<img src="img/wacom-and-adobe-logo.png" alt="Gana +  Adobe CC">-->
+							<img th:src="|${path}images/intous-logo.png|" alt="Gana +  Adobe CC">
+						</div>
+
+						<div class="tp-caption bottom-label left"
+							 data-x="20"
+							 data-y="300"
+							 data-start="1100"
+							 data-transform_in="y:[100%];opacity:0;s:500;">
+							<h2 class="h2-titular-pixeles">
+								Y obtén una suscripción<br>pre-pagada de 1 año al plan de<br>Adobe Creative Cloud Photography
+							</h2>
+						</div>
+
+						<div class="tp-caption"
+							 data-x="right" data-hoffset="50"
+							 data-y="bottom" data-voffset="40"
+							 data-start="1800"
+							 data-transform_in="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;s:500;">
+							<img th:src="|${path}img/videojuego-becarte_banner_02.png|" alt="">
+						</div><!-- -->
+
+
+						<!--- Botón PASOS DINÁMICA 
+						<a class="tp-caption enjoy-css btn btn-lg btn-slider-action borde-btn-pixeles"
+						   data-hash
+						   data-hash-offset="85"
+						   href="http://www.wacomlatam.com"
+						   data-x="center" data-hoffset="-460"
+						   data-y="center" data-voffset="145"
+						   data-start="1500"
+						   data-whitespace="nowrap"
+						   data-transform_in="y:[100%];s:500;"
+						   data-transform_out="opacity:0;s:500;"
+						   style="z-index: 5"
+						   data-mask_in="x:0px;y:0px;"><span style="font-size:16px; text-transform: uppercase;">Canjear Oferta</span></a>--->
+
+
+
+						<!--- Botón PARTICIPAR
+						<a class="tp-caption"
+						   data-hash
+						   data-hash-offset="85"
+						   href="http://www.wacom.com/en-us/products/pen-tablets/intuos-pro-small
+"
+						   target="_blank"
+						   data-x="center"
+						   data-hoffset="-470"
+						   data-y="center"
+						   data-voffset="275"
+						   data-start="1700"
+						   data-whitespace="nowrap"
+						   data-transform_in="y:[100%];s:500;"
+						   data-transform_out="opacity:0;s:500;"
+						   style="z-index: 5"
+						   data-mask_in="x:0px;y:0px;">
+							<span><img th:src="|${path}images/logo-btn-intuos-pro-small.png|">  </span></a>
+							--->
+
+
+					</li>
+
+
+
+
+					<!--- <li data-transition="fade">
+                        <img src="img/custom-header-bg.jpg"
+                            alt=""
+                            data-bgposition="center center"
+                            data-bgfit="cover"
+                            data-bgrepeat="no-repeat"
+                            class="rev-slidebg">
+
+                        <div class="tp-caption"
+                            data-x="center"
+                            data-y="center"
+                            data-start="500"
+                            data-transform_in="opacity:0;s:500;">
+                                <iframe frameborder='no' src='http://player.vimeo.com/video/67957799?title=0&byline=0&portrait=0;api=1' width='640' height='360' style='width:640px;height:360px;'></iframe>
+                            </div>
+
+                    </li>  --->
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+
+
+            
+</section>
+
+<!--- </body>
+</html> --->

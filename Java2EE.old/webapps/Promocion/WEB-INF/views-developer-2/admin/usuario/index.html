@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/backend/main}">
+
+<head>
+
+</head>
+
+<body>
+
+
+<div class="container" layout:fragment="content-fragment">
+
+	<div layout:include="layout/backend/messages :: messages-fragment">Messages...</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Usuarios</h3>
+		</div>
+		<div class="panel-body">
+			<div class="text-center" th:if="${!usuarios.isEmpty()}">
+				<ul class="pagination"></ul>
+			</div>
+			<br>
+
+			<form id="usuarios" name="usuarios" method="post" th:action="@{/admin/usuario/index.do}" th:with="token=${_csrf.token}">
+
+				<table class="table table-striped">
+
+					<thead>
+					<tr>
+						<th class="text-center">&nbsp;</th>
+						<th class="">Nombre</th>
+						<th class="">Usuario/Email</th>
+						<th class="">Edad/Producto</th>
+						<th class="">Fecha</th>
+					</tr>
+					</thead>
+
+					<tbody>
+
+					<tr th:each="usuario, row : ${usuarios}" th:if="${usuario.id != 1}">
+						<td class="text-center">
+							<button class="btn btn-primary" type="button">
+								Tickets <span class="badge" th:text="${usuario.tickets.size()}">4</span>
+							</button>
+						</td>
+						<td>
+							<span th:text="${usuario.nombre}"></span><br>
+							<span th:text="${usuario.paterno == null ? '' : usuario.paterno} + ' ' + ${usuario.materno == null ? '' : usuario.materno}"></span><br>
+							<span th:text="${usuario.genero}"></span>
+						</td>
+						<td>
+							<span th:text="${usuario.username}"></span><br>
+							<span th:text="${usuario.email}"></span><br><br>
+						</td>
+						<td>
+							<span th:text="${usuario.edad}"></span><br>
+							<span th:text="${usuario.producto}"></span>
+						</td>
+						<td th:text="${{usuario.dateCreated}}"></td>
+					</tr>
+
+					</tbody>
+
+				</table>
+
+				<input id="numberPage" name="numberPage" th:value="${numberPage}" type="hidden">
+				<input id="pageSizes" name="pageSizes" th:value="${pageSizes}" type="hidden">
+				<input id="search" name="search" th:value="${search}" type="hidden">
+
+			</form>
+
+			<div class="text-center" th:if="${!usuarios.isEmpty()}">
+				<ul class="pagination"></ul>
+			</div>
+
+			<!-- Si no existen registros -->
+			<h4 th:if="${usuarios.isEmpty()}" class="text-center">*No existen registros</h4>
+
+		</div>
+
+	</div>
+
+	<p>&nbsp;</p>
+
+	<script type="text/javascript" th:inline="javascript">
+		/*<![CDATA[*/
+		$(function () {
+			// Repopulate los datos de la lista de roles seleccionados
+			$('.pagination').twbsPagination({
+				initiateStartPageClick: false,
+				totalPages: [[${pageSizes}]],
+				visiblePages: 10,
+				startPage: [[${numberPage}]],
+				first: "<<",
+				prev: "<",
+				next: ">",
+				last: ">>",
+
+				onPageClick: function (event, page) {
+					//alert( page );
+					$("#numberPage").val(page);
+					$("#usuarios").trigger("submit");
+					//$('#page-content').text('Page ' + page);
+					//self.location = "/admin/categoria/[[${parent}]]/" + page + "/[[${pageSize}]]/[[${letter}]]";
+					//alert( page );
+
+				}
+			});
+
+		})
+		/*]]>*/
+
+	</script>
+
+</div>  <!-- Container -->
+
+
+</body>
+</html>

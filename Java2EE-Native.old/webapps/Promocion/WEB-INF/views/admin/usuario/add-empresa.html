@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/backend/main}">
+
+<head>
+	<title>...</title>
+</head>
+
+<body>
+
+
+<div layout:fragment="content-fragment" class="container form-width">
+
+	<div layout:include="layout/backend/messages :: messages-fragment">Messages...</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Nuevo Restaurante</h3>
+		</div>
+		<div class="panel-body">
+			<form th:object="${usuario}" id="usuario" name="usuario" method="post" th:action="@{/admin/usuario/add-empresa.do}">
+
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#datos" role="tab" aria-controls="datos">Datos Generales</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#direccion" role="tab" aria-controls="direccion">Dirección</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#detalle" role="tab" aria-controls="detalle">Detalle</a>
+					</li>
+				</ul>
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="datos" role="tabpanel">
+						<h2 class="text-uppercase text-center">Datos Generales</h2>
+
+						<div class="form-group">
+							<label>Activo *:</label><br>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-default" th:classappend="${usuario.activo} ? active : none">
+									<span class="glyphicon glyphicon-ok"></span>
+									<input th:field="*{activo}" type="radio" value="1">SI
+								</label>
+								<label class="btn btn-default" th:classappend="${usuario.activo == false} ? active : none">
+									<span class="glyphicon glyphicon-remove"></span>
+									<input th:field="*{activo}" type="radio" value="0">NO
+								</label>
+
+							</div>
+							<div th:if="${#fields.hasErrors('activo')}" th:errors="*{activo}" class="error">Name Error</div>
+
+						</div>
+
+						<!--
+						<div class="form-group">
+							<label>Tipo de usuario *:</label>
+							<select id="rolsForm" name="rolsForm" class="selectpicker form-control" data-actions-box="true" >
+								<option data-icon="glyphicon glyphicon-user" value="EMPRESA" selected="selected">EMPRESA</option>
+							</select>
+
+							<div th:if="${#fields.hasErrors('rolsForm')}" th:errors="*{rolsForm}" class="error">Name Error</div>
+
+						</div>
+						-->
+						<input id="rolsForm" name="rolsForm" type="hidden" value="EMPRESA">
+						<div th:if="${#fields.hasErrors('rolsForm')}" th:errors="*{rolsForm}" class="error">Name Error</div>
+
+
+						<div class="form-group">
+							<label>Razón Social *:</label>
+							<input th:field="*{nombre}" class="form-control">
+							<div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="error">Name Error</div>
+						</div>
+
+						<div class="form-group">
+							<label>Nombre de Usuario *:</label>
+							<input th:field="*{username}" class="form-control">
+							<div th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error">Name Error</div>
+						</div>
+
+						<div class="form-group">
+							<label>Email *:</label>
+							<input th:field="*{email}" class="form-control">
+							<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error">Name Error</div>
+
+						</div>
+
+						<div class="form-group">
+							<label>Contraseña *:</label>
+							<input th:field="*{password}" type="password" class="form-control" value="">
+							<div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error">Name Error</div>
+						</div>
+
+						<div class="form-group">
+							<label>Repetir Contraseña *:</label>
+							<input th:field="*{passwordRepeat}" type="password" class="form-control" value="">
+							<div th:if="${#fields.hasErrors('passwordRepeat')}" th:errors="*{passwordRepeat}" class="error">Name Error</div>
+
+						</div>
+
+					</div>
+
+					<div class="tab-pane" id="direccion" role="tabpanel">
+						<h2 class="text-uppercase text-center">Dirección</h2>
+
+						<div class="form-group">
+							<label>Calle *:</label>
+							<input th:field="*{direccionForm.calles}" class="form-control">
+							<div th:if="${#fields.hasErrors('direccionForm.calles')}" th:errors="*{direccionForm.calles}" class="error">Name Error</div>
+						</div>
+
+						<div class="form-group">
+							<label>Número exterior *:</label>
+							<input th:field="*{direccionForm.numeroExterior}" class="form-control">
+							<div th:if="${#fields.hasErrors('direccionForm.numeroExterior')}" th:errors="*{direccionForm.numeroExterior}" class="error">Name Error</div>
+						</div>
+
+						<div class="form-group">
+							<label>Número interior :</label>
+							<input th:field="*{direccionForm.numeroInterior}" class="form-control">
+							<div th:if="${#fields.hasErrors('direccionForm.numeroInterior')}" th:errors="*{direccionForm.numeroInterior}" class="error">Name Error</div>
+						</div>
+
+						<div class="form-group">
+							<label>Código postal *:</label>
+							<input th:field="*{direccionForm.codigoPostal}" class="form-control">
+							<div th:if="${#fields.hasErrors('direccionForm.codigoPostal')}" th:errors="*{direccionForm.codigoPostal}" class="error">Name Error</div>
+						</div>
+
+						<div class="form-group">
+							<label>Colonia :</label>
+							<input th:field="*{direccionForm.colonia}" class="form-control">
+							<div th:if="${#fields.hasErrors('direccionForm.colonia')}" th:errors="*{direccionForm.colonia}" class="error">Name Error</div>
+						</div>
+
+						<div class="form-group">
+							<label>Estado *:</label>
+							<input th:field="*{direccionForm.estado}" class="form-control">
+							<div th:if="${#fields.hasErrors('direccionForm.estado')}" th:errors="*{direccionForm.estado}" class="error">Name Error</div>
+						</div>
+
+						<div class="form-group">
+							<label>Municipio :</label>
+							<input th:field="*{direccionForm.municipio}" class="form-control">
+							<div th:if="${#fields.hasErrors('direccionForm.municipio')}" th:errors="*{direccionForm.municipio}" class="error">Name Error</div>
+						</div>
+
+					</div>
+
+					<div class="tab-pane" id="detalle" role="tabpanel">
+						<h2 class="text-uppercase text-center">Detalle</h2>
+
+						<div class="form-group">
+							<label>Tipo de comida *:</label>
+							<select th:field="*{detalle.categoria.id}" class="form-control">
+								<optgroup label="TIPOS DE COMIDA">
+									<option th:each="cat : ${categorias}" th:value="${cat.id}" th:text="${cat.nombre}">Categorias...</option>
+								</optgroup>
+							</select>
+
+							<div th:if="*{#fields.hasErrors('detalle.categoria.id')}" th:errors="*{detalle.categoria.id}" class="error">Name Error</div>
+						</div>
+
+						<div class="form-group">
+							<label>Servicio *:</label><br>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-default" th:classappend="*{detalle.servicio == 'A DOMICILIO'} ? active : none">
+									<input th:field="*{detalle.servicio}" type="radio" value="A DOMICILIO">A DOMICILIO
+								</label>
+								<label class="btn btn-default" th:classappend="*{detalle.servicio == 'RECOGER EN EL LUGAR'} ? active : none">
+									<input th:field="*{detalle.servicio}" type="radio" value="RECOGER EN EL LUGAR">RECOGER EN EL LUGAR
+								</label>
+								<label class="btn btn-default" th:classappend="*{detalle.servicio == 'A DOMICILIO | RECOGER EN EL LUGAR'} ? active : none">
+									<input th:field="*{detalle.servicio}" type="radio" value="A DOMICILIO | RECOGER EN EL LUGAR">A DOMICILIO Y RECOGER EN EL LUGAR
+								</label>
+
+							</div>
+							<div th:if="${#fields.hasErrors('detalle.servicio')}" th:errors="*{detalle.servicio}" class="error">Name Error</div>
+
+						</div>
+
+						<div class="form-group">
+							<label>Descripción *:</label>
+							<input th:field="*{detalle.descripcion}" class="form-control">
+							<div th:if="*{#fields.hasErrors('detalle.descripcion')}" th:errors="*{detalle.descripcion}" class="error">Name Error</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label>Imagen *:</label>
+									<input th:field="*{detalle.imagen}" type="hidden">
+									<input th:field="*{detalle.imagenForm}" type="hidden">
+									<br>
+									<button type="button" class="btn btn-danger btn-upload" data-toggle="modal" data-name-field="detalle.imagen" data-target="#uploadModal" style="width: 150px; margin-bottom: 5px;">
+										Subir archivo...
+									</button>
+									<div id="detalle.imagen-preview-form">
+										<a th:if="*{detalle.urlImagen != null}" th:href="@{${usuario.detalle.urlImagen}}" target="_blank">
+											<img class="img-thumbnail" th:src="@{${usuario.detalle.urlImagen}}" style="max-width: 200px; border: 1px solid #ccc; border-radius: 3px;">
+										</a>
+									</div>
+
+									<div th:if="*{#fields.hasErrors('detalle.imagen')}" th:errors="*{detalle.imagen}" class="error">Name Error</div>
+								</div>
+
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label>Banner:</label>
+									<input th:field="*{detalle.imagenBanner}" type="hidden">
+									<input th:field="*{detalle.imagenBannerForm}" type="hidden">
+									<br>
+									<button type="button" class="btn btn-danger btn-upload" data-toggle="modal" data-name-field="detalle.imagenBanner" data-target="#uploadModal" style="width: 150px; margin-bottom: 5px;">
+										Subir archivo...
+									</button>
+
+									<div id="detalle.imagenBanner-preview-form">
+										<a th:if="*{detalle.urlImagenBanner != null}" th:href="@{${usuario.detalle.urlImagenBanner}}" target="_blank">
+											<img class="img-thumbnail" th:src="@{${usuario.detalle.urlImagenBanner}}" style="max-width: 200px; border: 1px solid #ccc; border-radius: 3px;">
+										</a>
+									</div>
+
+								</div>
+
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label>Banner promocional:</label>
+									<input th:field="*{detalle.imagenBannerPromocional}" type="hidden">
+									<input th:field="*{detalle.imagenBannerPromocionalForm}" type="hidden">
+									<br>
+									<button type="button" class="btn btn-danger btn-upload" data-toggle="modal" data-name-field="detalle.imagenBannerPromocional" data-target="#uploadModal" style="width: 150px; margin-bottom: 5px;">
+										Subir archivo...
+									</button>
+									<div id="detalle.imagenBannerPromocional-preview-form">
+										<a th:if="*{detalle.urlImagenBannerPromocional != null}" th:href="@{${usuario.detalle.urlImagenBannerPromocional}}" target="_blank">
+											<img class="img-thumbnail" th:src="@{${usuario.detalle.urlImagenBannerPromocional}}" style="max-width: 200px; border: 1px solid #ccc; border-radius: 3px;">
+										</a>
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="form-group">
+							<label>Monto mínimo $ *:</label>
+							<input th:field="*{detalle.montoMinimo}" class="form-control">
+							<div th:if="*{#fields.hasErrors('detalle.montoMinimo')}" th:errors="*{detalle.montoMinimo}" class="error">Name Error</div>
+						</div>
+
+						<div class="form-group">
+							<label>Costo de envio $ *:</label>
+							<input th:field="*{detalle.montoEnvio}" class="form-control">
+							<div th:if="*{#fields.hasErrors('detalle.montoEnvio')}" th:errors="*{detalle.montoEnvio}" class="error">Name Error</div>
+						</div>
+
+						<div class="form-group">
+							<label>Tiempo de entrega(minutos) *:</label>
+							<input th:field="*{detalle.tiempoEntregaMinuto}" class="form-control">
+							<div th:if="*{#fields.hasErrors('detalle.tiempoEntregaMinuto')}" th:errors="*{detalle.tiempoEntregaMinuto}" class="error">Name Error</div>
+
+						</div>
+
+						<div class="row">&nbsp;</div>
+
+						<div class="text-center">
+							<a class="btn btn-primary" th:href="@{/admin/usuario/}">
+								<span class="glyphicon glyphicon-arrow-left"></span>
+								Regresar
+							</a>
+							<button type="submit" class="btn btn-primary">
+								<span class="glyphicon glyphicon-ok"></span>
+								Guardar
+							</button>
+
+						</div>
+
+					</div>
+				</div>
+
+				<input name="paterno" value="NULLO"             type="hidden">
+				<input name="materno" value="NULLO"             type="hidden">
+
+				<input th:field="*{genero}"                     type="hidden">
+				<input th:field="*{dateCreated}"                type="hidden">
+				<input th:field="*{direccionForm.tipo}"         type="hidden">
+
+				<div class="row">&nbsp;</div>
+
+			</form>
+
+		</div>
+
+	</div>
+
+	<script type="text/javascript" th:inline="javascript">
+		/*<![CDATA[*/
+		$(function () {
+			$('#myTab a:first').tab('show');
+
+			// Repopulate los datos de la lista de roles seleccionados
+			$(".selectpicker").selectpicker("val", [[${usuario.rolsForm}]]);
+		})
+		/*]]>*/
+
+	</script>
+
+	<div layout:include="layout/backend/upload :: upload-fragment">Upload...</div>
+
+</div>
+
+
+</body>
+</html>

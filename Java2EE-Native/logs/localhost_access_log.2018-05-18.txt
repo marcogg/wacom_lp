@@ -1,0 +1,15 @@
+0:0:0:0:0:0:0:1 - - [18/May/2018:02:50:54 -0500] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [18/May/2018:02:50:54 -0500] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [18/May/2018:02:51:07 -0500] "GET /Promocion/resources/js/jquery.twbsPagination.js HTTP/1.1" 200 11482
+0:0:0:0:0:0:0:1 - - [18/May/2018:02:51:08 -0500] "GET /Promocion/resources/js/functions-system.js HTTP/1.1" 200 3529
+0:0:0:0:0:0:0:1 - - [18/May/2018:02:51:09 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [18/May/2018:02:51:10 -0500] "GET /Promocion/resources/js/bootstrap-session-timeout.js HTTP/1.1" 200 10199
+0:0:0:0:0:0:0:1 - - [18/May/2018:02:51:10 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [18/May/2018:02:51:11 -0500] "GET /Promocion/resources/js/bootstrap.min.js HTTP/1.1" 200 37045
+0:0:0:0:0:0:0:1 - - [18/May/2018:02:51:11 -0500] "GET /Promocion/resources/js/sweetalert.min.js HTTP/1.1" 200 16994
+0:0:0:0:0:0:0:1 - - [18/May/2018:21:44:45 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [18/May/2018:21:44:45 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [18/May/2018:22:33:12 -0500] "GET /Promocion/login.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [18/May/2018:22:33:12 -0500] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [18/May/2018:22:33:15 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [18/May/2018:22:33:16 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625

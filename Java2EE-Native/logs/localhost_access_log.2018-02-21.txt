@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:17:03:38 -0600] "GET /Promocion/resources/css/bootstrap.min.css HTTP/1.1" 200 128317
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:17:03:41 -0600] "GET /Promocion/resources/images/logo.png HTTP/1.1" 200 27311
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:17:04:05 -0600] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:18:32:54 -0600] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:20:28:24 -0600] "GET /Promocion/resources/css/bootstrap.min.css HTTP/1.1" 200 128317
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:20:28:24 -0600] "GET /Promocion/resources/images/logo.png HTTP/1.1" 200 27311
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:20:42:26 -0600] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:20:42:26 -0600] "GET /Promocion/resources/css/bootstrap.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:21:04:56 -0600] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:21:04:56 -0600] "GET /Promocion/resources/css/bootstrap.min.css HTTP/1.1" 304 -

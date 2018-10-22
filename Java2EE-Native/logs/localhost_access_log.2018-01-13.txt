@@ -1,0 +1,16 @@
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:09:58:21 -0600] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:13:38:57 -0600] "GET /Promocion/ HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:13:38:57 -0600] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:13:38:57 -0600] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:13:39:25 -0600] "GET /Promocion/ HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:13:39:25 -0600] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:13:39:25 -0600] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:21:47:54 -0600] "GET /Promocion/ HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:21:47:55 -0600] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:21:47:55 -0600] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:21:48:03 -0600] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:21:48:05 -0600] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:21:52:29 -0600] "GET /Promocion/ HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:21:52:30 -0600] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:21:52:30 -0600] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [13/Jan/2018:21:52:33 -0600] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625

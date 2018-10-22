@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/frontend/main}">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<div layout:fragment="content-fragment" class="container">
+
+	<div layout:include="layout/frontend/messages :: messages-fragment">Messages...</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title" th:class="text-uppercase">Tickets participando</h4>
+		</div>
+		<div class="panel-body">
+			<form id="tickets" name="tickets" method="post" th:action="@{/participa/tickets/index.do}">
+
+				<div class="text-center" th:if="${!tickets.isEmpty()}">
+					<ul class="pagination"></ul>
+				</div>
+				<br>
+
+				<div th:each="tic : ${tickets}" th:with="existen=${true}" class="col-sm-3">
+
+					<ul class="list-group">
+						<li class="list-group-item list-group-item active text-center">
+							<h2 class="list-group-item-heading" th:text="${tic.titulo}" style="font-weight: bold;">Título...</h2>
+						</li>
+						<li class="list-group-item text-center" style="height: 155px;" th:if="${tic.disenyo != null && tic.disenyo != ''}">
+							<!-- Diseño -->
+							<a th:with="split=${#strings.arraySplit(tic.disenyo, '.')}"
+							   th:href="@{/resources/cms_files/tickets/} + ${split[0]} + '-thumbnail.' + ${split[1]}"
+							   th:download="${tic.disenyo}">
+
+								<img class="text-center" th:src="@{/resources/cms_files/tickets/} + ${split[0]} + '-thumbnail.' + ${split[1]}"
+								     style="max-width: 160px; border: 1px solid #ccc; border-radius: 3px;">
+							</a>
+
+						</li>
+						<li class="list-group-item text-center">
+							<div th:text="${{tic.dateCreated}}" style="font-weight:bold;">Fecha...</div>
+						</li>
+						<li class="list-group-item text-center">
+
+							<!-- Usuario == ID de Usuario en Sesión -->
+							<th:block th:if="${tic.usuario.id eq #session.getAttribute('usuario').id}">
+
+								<a class="btn" th:classappend="${tic.childVotos.size() > 0 ? 'btn-success' : 'btn-warning'}" href="javascript:void(0);" style="width: 120px;">
+									<span class="glyphicon" th:classappend="${tic.childVotos.size() > 0 ? 'glyphicon-hand-up' : 'glyphicon-hand-down'}"></span><br>
+									<span class="badge" th:text="${tic.childVotos.size()}">Votos...</span><br>
+									Es mi Diseño
+								</a>
+
+							</th:block>
+
+							<!-- Usuarios != ID de Usuario en Sesión -->
+							<th:block th:if="${tic.usuario.id ne #session.getAttribute('usuario').id}">
+
+								<!-- Votar -->
+								<a th:if="${tic.votacion eq false}"
+								   class="btn btn-success"
+								   th:href="@{/participa/ticket/votar/} + ${tic.id + '.do'}" style="width: 120px;">
+									<span class="glyphicon glyphicon-hand-up"></span><br>
+									<span class="badge" th:text="${tic.childVotos.size()}">Votos...</span><br>
+									Quiero Votar
+								</a>
+
+								<!-- Ya voto -->
+								<a th:if="${tic.votacion eq true}" class="btn btn-warning" href="javascript:void(0);" style="width: 120px;">
+									<span class="glyphicon glyphicon-hand-down"></span><br>
+									<span class="badge" th:text="${tic.childVotos.size()}">Votos...</span><br>
+									Ya Vote
+								</a>
+
+							</th:block>
+
+						</li>
+					</ul>
+				</div>
+
+				<input id="numberPage" name="numberPage" th:value="${numberPage}" type="hidden">
+				<input id="pageSizes" name="pageSizes" th:value="${pageSizes}" type="hidden">
+
+			</form>
+
+			<h4 th:if="${tickets.isEmpty()}" class="text-center">*Por el momento no existen tickets participando</h4>
+
+		</div>
+
+		<div class="text-center" th:if="${!tickets.isEmpty()}">
+			<ul class="pagination"></ul>
+		</div>
+
+		<p>&nbsp;</p>
+
+	</div>
+
+	<script type="text/javascript" th:inline="javascript">
+		/*<![CDATA[*/
+		$(function () {
+			// Repopulate los datos de la lista de roles seleccionados
+			$('.pagination').twbsPagination({
+				initiateStartPageClick: false,
+				totalPages: [[${pageSizes}]],
+				visiblePages: 10,
+				startPage: [[${numberPage}]],
+				first: "<<",
+				prev: "<",
+				next: ">",
+				last: ">>",
+
+				onPageClick: function (event, page) {
+					$("#numberPage").val(page);
+					$("#tickets").trigger("submit");
+					//$('#page-content').text('Page ' + page);
+					//self.location = "/admin/categoria/[[${parent}]]/" + page + "/[[${pageSize}]]/[[${letter}]]";
+					//alert( page );
+
+				}
+			});
+
+		})
+		/*]]>*/
+
+	</script>
+
+</div>
+
+</body>
+</html>

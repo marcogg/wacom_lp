@@ -1,0 +1,4 @@
+[29-Jan-2016 19:34:02 UTC] PHP Notice:  Undefined variable: sender in /home/webnueva2015/public_html/newsletter/classes/newsletter.php on line 30
+[29-Jan-2016 19:34:02 UTC] PHP Notice:  Undefined variable: postdata in /home/webnueva2015/public_html/newsletter/classes/YMLP_API.class.php on line 35
+[04-Feb-2016 22:23:14 UTC] PHP Notice:  Use of undefined constant EMAIL_CONTACTO_FROM - assumed 'EMAIL_CONTACTO_FROM' in /home/webnueva2015/public_html/newsletter/classes/newsletter.php on line 13
+[29-Mar-2016 21:48:12 UTC] PHP Notice:  Undefined index: HTTP_REFERER in /home/webnueva2015/public_html/newsletter/classes/newsletter.php on line 40

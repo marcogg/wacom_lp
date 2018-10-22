@@ -1,0 +1,14 @@
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:01:07:24 -0600] "GET /Promocion/ HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:01:07:25 -0600] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:01:07:25 -0600] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:01:40:30 -0600] "GET /Promocion/ HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:01:40:30 -0600] "GET /Promocion/ HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:02:19:30 -0600] "GET /Promocion/login.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:02:19:32 -0600] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:02:19:33 -0600] "GET /Promocion/registro/recupera-password.do HTTP/1.1" 200 20890
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:07:12:52 -0600] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:07:59:25 -0600] "GET /Promocion/ HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:12:27:14 -0600] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:12:27:15 -0600] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:13:32:13 -0600] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [14/Jan/2018:13:32:14 -0600] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957

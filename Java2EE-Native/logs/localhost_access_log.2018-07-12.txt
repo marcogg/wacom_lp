@@ -1,0 +1,1 @@
+0:0:0:0:0:0:0:1 - - [12/Jul/2018:10:50:07 -0500] "GET /Promocion/finish.do?danger=Estas+intentando+ingresar+sin+autorizaci%F3n.%3Cbr%3EPor+favor+ingresa+tus+datos+de+acceso. HTTP/1.1" 200 20024

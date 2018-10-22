@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-64 0 210 180" style="enable-background:new -64 0 210 180;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#231F20;}
+	.st1{fill:#E6E7E8;}
+	.st2{fill:#58595B;}
+	.st3{fill:#EC1C24;}
+	.st4{fill:#8BC53F;}
+	.st5{fill:#FFFFFF;}
+	.st6{fill:#AAC1E4;}
+	.st7{fill:#C2A433;}
+	.st8{fill:#F5D333;}
+	.st9{fill:#E3BE28;}
+	.st10{fill:#D4B330;}
+	.st11{fill:#0088CC;}
+</style>
+<polygon id="XMLID_1_" class="st0" points="3.7,12 16,12 16,0 134.1,0 134.1,12 146,12 146,154.3 134.7,154.3 134.7,177.3 16,177.3 
+	16,154.3 3.7,154.3 "/>
+<rect id="XMLID_10_" x="16" y="12" class="st1" width="118.8" height="142.4"/>
+<rect id="XMLID_2_" x="16" y="154.3" class="st2" width="70.5" height="12.1"/>
+<rect id="XMLID_4_" x="74.8" y="129.7" class="st0" width="49" height="12.1"/>
+<rect id="XMLID_3_" x="27.6" y="134.3" class="st3" width="11.6" height="11.6"/>
+<rect id="XMLID_9_" x="27.6" y="98.8" class="st3" width="11.6" height="10.6"/>
+<rect id="XMLID_6_" x="27.6" y="122.7" class="st4" width="11.6" height="11.6"/>
+<path id="XMLID_5_" class="st2" d="M27.6,94.7h11.6c0-1,0-60.6,0-60.6h84.5V23.6H27.6V94.7z"/>
+<path id="XMLID_8_" class="st5" d="M123.8,34.1h-11.6c0,1,0,60.6,0,60.6H39.3v10.5h84.5V34.1z"/>
+<rect id="XMLID_7_" x="39.2" y="34.1" class="st6" width="72.9" height="60.6"/>
+<g id="XMLID_29_">
+	<g id="XMLID_41_">
+		<rect id="XMLID_27_" x="67.5" y="38.9" class="st7" width="25.2" height="5.9"/>
+		<rect id="XMLID_26_" x="62.5" y="44.8" class="st7" width="35.2" height="5.9"/>
+		<rect id="XMLID_25_" x="57.2" y="50.6" class="st7" width="45.9" height="5.9"/>
+		<rect id="XMLID_24_" x="57.2" y="56.5" class="st7" width="45.9" height="21.7"/>
+		<rect id="XMLID_23_" x="62.5" y="78.2" class="st7" width="35.2" height="5.9"/>
+		<rect id="XMLID_22_" x="67.5" y="84.1" class="st7" width="25.2" height="5.9"/>
+	</g>
+	<g id="XMLID_30_">
+		<rect id="XMLID_21_" x="63.1" y="38.9" class="st8" width="25.2" height="5.9"/>
+		<rect id="XMLID_20_" x="58.2" y="44.8" class="st9" width="35.2" height="5.9"/>
+		<rect id="XMLID_19_" x="58.2" y="44.8" class="st8" width="5" height="5.9"/>
+		<rect id="XMLID_18_" x="52.9" y="50.6" class="st9" width="45.9" height="5.9"/>
+		<rect id="XMLID_17_" x="52.9" y="56.5" class="st9" width="45.9" height="21.7"/>
+		<rect id="XMLID_16_" x="68.9" y="50.6" class="st7" width="17.2" height="27.6"/>
+		<rect id="XMLID_15_" x="73.2" y="50.6" class="st10" width="12.9" height="27.6"/>
+		<rect id="XMLID_14_" x="58.2" y="78.2" class="st9" width="35.2" height="5.9"/>
+		<rect id="XMLID_13_" x="63.1" y="84.1" class="st9" width="25.2" height="5.9"/>
+		<rect id="XMLID_11_" x="52.9" y="50.6" class="st8" width="5.3" height="27.6"/>
+	</g>
+</g>
+<rect x="-64" class="st11" width="50.1" height="180"/>
+<g>
+	<path class="st5" d="M-43,14.1h8v28h-8v-20h-4v-4h4V14.1z"/>
+</g>
+</svg>

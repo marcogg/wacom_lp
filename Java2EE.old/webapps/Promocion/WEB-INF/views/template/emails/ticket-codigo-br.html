@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Confirmación de Registro</title>
+
+	<link th:href="#{application.WebRoot} + 'resources/css/bootstrap.min.css'" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container" style="max-width: 800px; margin: 0px auto 0px auto;">
+
+	<br><br>
+
+	<table class="table table-bordered">
+		<thead>
+		<tr>
+			<td class="text-center" style="background-color: #fff; padding: 10px;">
+				<img th:src="#{application.WebRoot} + 'resources/images/logo.png'" width="150">
+
+			</td>
+		</tr>
+		</thead>
+
+		<tbody th:object="${ticket}">
+		<tr>
+			<td>
+				<div style="color: #000;" class="text-center">
+					<h2>AVISO !!</h2>
+					<div style="font-size: 17px;">
+						<span style="font-weight: bold">
+							CARO/A: <span th:text="|${usuario.nombre} ${usuario.apellidos}.|">Nombre...</span><br>
+							CÓDIGO DE RESGATE ADOBE..<br>
+							CÓDIGO DE ATIVAÇÃO: <span th:text="*{codigo.codigo}"></span>
+
+						</span>
+						<br><br>
+
+
+						<div th:utext="|<strong>Número do bilhete:</strong> *{numero}|"></div>
+						<div th:utext="|<strong>Loja:</strong> *{tienda}|"></div>
+						<div th:utext="|<strong>Producto:</strong> *{producto.nombre}|"></div>
+						<div th:utext="|<strong>Quantidade:</strong> $${#numbers.formatDecimal(ticket.monto, 1, 'COMMA', 2, 'POINT')}|"></div>
+						<div th:utext="|<strong>Data da compra:</strong> ${#dates.format( ticket.fechaCompra, 'dd/MM/yyyy' )}|"></div>
+
+						<div style="padding: 30px; text-align: justify;">
+							Obrigado por registrar a sua compra para participar da campanha da Wacom.<br><br>
+
+							Por favor, siga os próximos passos:<br>
+							Passo 1 – Registre-se em <a href="http://Wacom.com/register">Wacom.com/register</a><br>
+							Para receber a oferta, você deve registrar o Produto Elegível em: <a href="http://www.wacom.com/register">www.wacom.com/register</a> . O registro deve ser completado antes de 30 de agosto de 2017 (o “Período do Registro”).  O registro exige que você forneça seu nome, um endereço de e-mail válido, número de série do Produto Elegível, a data de compra Produto Elegível e chave de download do software (SBD) que está neste e-mail. Você receberá um e-mail do sistema de registro Wacom com o código de resgate da Adobe.<br>
+							Passo 2 - Ativar com a Adobe<br>
+							Depois de completar o registro do seu Produto Elegível com Wacom na Etapa 1, você deve ativar sua associação com a Adobe até 30 de agosto de 2017. Depois de ter concluído o processo de registo descrito acima, você receberá um e-mail do sistema de registo Wacom com o código de resgate da Adobe. Note que o código de resgate do software é exclusivo para cada usuário final e pode ser usado apenas uma vez.<br>
+							Depois de ter recebido o seu código de resgate da Adobe, siga estes passos para ativar a sua adesão:<br>
+							1. Visite <a href="https://creative.adobe.com/redeem">https://creative.adobe.com/redeem</a> <br>
+							2. Faça login com seu ID da Adobe ou registre-se para criar um login.<br>
+							3. Use o "código de resgate Adobe" contido no e-mail que você recebeu da Wacom e clique em "Ativar sua associação" ou "Ativar a adesão"<br>
+							4. Leia os termos e condições de renovação e clique em "Aceitar os termos e condições" ou "Lembrar mais tarde"<br>
+							5. Clique em "Get Started" ou "Start"<br><br>
+
+							Problemas?<br>
+							Se você tiver problemas para registrar o seu Produto Elegível ou se você não receber uma confirmação de registro Wacom apesar de ter completado todo o processo de registo, contate o Centro de Assistência ao Cliente Wacom usando o formulário de contato: http://www.wacom.com/pt-br/support/contact-support<br>
+							Se precisar de ajuda para ativar sua assinatura trocando o código de resgate da Adobe, visite o seguinte site: <a href="https://helpx.adobe.com/x-productkb/global/redemption-code-purchase-help.htm">https://helpx.adobe.com/x-productkb/global/redemption-code-purchase-help.htm</a><br>
+
+
+						</div>
+
+					</div>
+
+				</div>
+				<br><br>
+
+
+			</td>
+		</tr>
+
+		</tbody>
+
+	</table>
+
+</div>
+
+</body>
+</html>

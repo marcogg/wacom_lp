@@ -1,0 +1,2 @@
+26-Oct-2017 16:08:35.342 INFO [http-nio-8083-exec-10] org.apache.catalina.util.LifecycleBase.stop The stop() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[]] after stop() had already been called. The second call will be ignored.
+26-Oct-2017 16:08:35.845 INFO [http-nio-8083-exec-10] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []

@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [05/Apr/2018:03:37:14 -0500] "GET /Promocion/registro/recupera-password.do HTTP/1.1" 200 20890
+0:0:0:0:0:0:0:1 - - [05/Apr/2018:07:52:33 -0500] "GET /Promocion/registro/recupera-password.do HTTP/1.1" 200 20890
+0:0:0:0:0:0:0:1 - - [05/Apr/2018:09:09:05 -0500] "GET /Promocion HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [05/Apr/2018:09:09:05 -0500] "GET /Promocion/ HTTP/1.1" 200 193

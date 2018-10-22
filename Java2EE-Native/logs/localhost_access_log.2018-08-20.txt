@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [20/Aug/2018:15:52:32 -0500] "GET /Promocion/login.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [20/Aug/2018:15:52:33 -0500] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [20/Aug/2018:15:53:03 -0500] "GET /Promocion/resources/js/bootstrap-session-timeout.js HTTP/1.1" 200 10199
+0:0:0:0:0:0:0:1 - - [20/Aug/2018:15:53:07 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [20/Aug/2018:15:53:08 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [20/Aug/2018:16:54:19 -0500] "GET /Promocion/resources/js/bootstrap.min.js HTTP/1.1" 200 37045
+0:0:0:0:0:0:0:1 - - [20/Aug/2018:16:54:21 -0500] "GET /Promocion/resources/js/sweetalert.min.js HTTP/1.1" 200 16994
+0:0:0:0:0:0:0:1 - - [20/Aug/2018:16:54:22 -0500] "GET /Promocion/resources/js/jquery.twbsPagination.js HTTP/1.1" 200 11482

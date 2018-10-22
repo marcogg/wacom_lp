@@ -1,0 +1,1 @@
+0:0:0:0:0:0:0:1 - - [03/May/2018:19:09:29 -0500] "GET /Promocion/resources/js/bootstrap.min.js HTTP/1.1" 200 37045

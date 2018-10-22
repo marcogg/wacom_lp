@@ -1,0 +1,16 @@
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:00:12:46 -0500] "GET /Promocion/login.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:46:27 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 200 27311
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:46:27 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:46:28 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:46:29 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:46:29 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:47:05 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:47:05 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:47:06 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:47:06 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:47:07 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:47:07 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:47:07 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:47:07 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:47:08 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Sep/2018:13:47:08 -0500] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -

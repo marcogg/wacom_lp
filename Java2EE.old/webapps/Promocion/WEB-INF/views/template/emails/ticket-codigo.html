@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Confirmación de Registro</title>
+
+	<link th:href="#{application.WebRoot} + 'resources/css/bootstrap.min.css'" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container" style="max-width: 800px; margin: 0px auto 0px auto;">
+
+	<br><br>
+
+	<table class="table table-bordered">
+		<thead>
+		<tr>
+			<td class="text-center" style="background-color: #999; padding: 10px;">
+				<img th:src="#{application.WebRoot} + 'resources/images/logo.png'" width="150">
+
+				<div class="text-center">
+					<a th:href="|http://wacomlatam.com/Promocion/intrucciones-wacom-portugues.html|" target="_blank" class="btn btn-primary">
+						<strong>Leia em Português</strong>
+					</a>
+
+				</div>
+
+			</td>
+		</tr>
+		</thead>
+
+		<tbody th:object="${ticket}">
+		<tr>
+			<td>
+				<div style="color: #fff;" class="text-center">
+					<h2>¡¡ AVISO !!</h2>
+					<div style="font-size: 17px;">
+						<span style="font-weight: bold">
+							Estimado/a: <span th:text="|${usuario.nombre} ${usuario.apellidos}.|">Nombre...</span><br>
+							TE NOTIFICAMOS TU CÓDIGO DE CANJE ADOBE.<br>
+							CÓDIGO DE CANJE: <span th:text="*{codigo.codigo}"></span>
+
+						</span>
+						<br><br>
+
+						<div th:utext="|<strong>Número de ticket:</strong> *{numero}|"></div>
+						<div th:utext="|<strong>Tienda:</strong> *{tienda}|"></div>
+						<div th:utext="|<strong>Producto:</strong> *{producto.nombre}|"></div>
+						<div th:utext="|<strong>Monto:</strong> $${#numbers.formatDecimal(ticket.monto, 1, 'COMMA', 2, 'POINT')}|"></div>
+						<div th:utext="|<strong>Fecha de compra:</strong> ${#dates.format( ticket.fechaCompra, 'dd/MM/yyyy' )}|"></div>
+
+						<div style="padding: 30px; text-align: justify;">
+
+							Gracias por registrar su compra para participar en la campana de Wacom. El código SDB (código de descargar del software) es <span th:text="*{codigo.codigo}"></span> .<br><br>
+
+							Por favor sigan los próximos pasos:<br>
+							Paso 1 - Registrarse en Wacom.com/register:<br>
+							Para recibir la Oferta, debe registrar el Producto Elegible en: www.wacom.com/register. El registro debe ser completado antes del 30 de agosto de 2017 (el "Período de Registro"). El registro requiere que usted proporcione su nombre, una dirección de correo electrónico válida, el número de serie del Producto Elegible, la fecha de compra del Producto Elegible y la clave de descarga de software (SBD) que esta en esta carta. Recibirá un correo electrónico del sistema de registro de Wacom con un Código de canje de Adobe.<br>
+							Paso 2 - Activar con Adobe<br>
+							Después de completar el registro de su Producto Elegible con Wacom en Paso 1, deberá activar su membresía con Adobe antes del 30 de agosto de 2017. Una vez que haya completado el proceso de registro descrito anteriormente, recibirá un correo electrónico del sistema de registro de Wacom con un Código de canje de Adobe. Tenga en cuenta que el código de reembolso es exclusivo para cada usuario final y sólo se utiliza una vez.<br>
+							Una vez que haya recibido su código de canje de Adobe, siga estos pasos para activar su membresía:<br>
+							1.	Visita <a href="https://creative.adobe.com/redeem">https://creative.adobe.com/redeem</a><br>
+							2.	Inicia sesión con tu ID de Adobe o regístrate para crear o obtener uno.<br>
+							3.	Usa el “Adobe redemption code” mostrado en el correo electrónico que recibiste de Wacom y haz click en “Activa tu membresía” o “Activate membership”<br>
+							4.	Lee los términos y condiciones para renovación y haz click en “Aceptar los términos y condiciones” o “Recuérdame más tarde”<br>
+							5.	Haz click en “Get Started” o “Empieza”<br><br>
+
+							¿Problemas?<br>
+							Si tiene problemas con el registro de su Producto Elegible o en caso de que no reciba una confirmación de registro de Wacom a pesar de haber completado el proceso de registro, comuníquese con el Centro de Atención al Cliente de Wacom usando el formulario de contacto: <a href="www.wacom.com/es-mx/support">www.wacom.com/es-mx/support</a> <br>
+							Si necesita ayuda para activar su suscripción mediante el canje de su código de canje de Adobe, visite el siguiente sitio web: <a href="https://helpx.adobe.com/x-productkb/global/redemption-code-purchase-help.htm">https://helpx.adobe.com/x-productkb/global/redemption-code-purchase-help.htm</a>
+
+
+						</div>
+
+					</div>
+
+				</div>
+				<br><br>
+
+
+			</td>
+		</tr>
+
+		</tbody>
+
+	</table>
+
+</div>
+
+</body>
+</html>

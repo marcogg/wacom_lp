@@ -1,0 +1,13 @@
+0:0:0:0:0:0:0:1 - - [10/May/2018:19:24:19 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [10/May/2018:19:24:20 -0500] "GET /Promocion/resources/js/bootstrap.min.js HTTP/1.1" 200 37045
+0:0:0:0:0:0:0:1 - - [10/May/2018:19:24:20 -0500] "GET /Promocion/resources/js/jquery.twbsPagination.js HTTP/1.1" 200 11482
+0:0:0:0:0:0:0:1 - - [10/May/2018:19:24:21 -0500] "GET /Promocion/resources/css/bootstrap-select.min.css HTTP/1.1" 200 6437
+0:0:0:0:0:0:0:1 - - [10/May/2018:19:24:21 -0500] "GET /Promocion/resources/js/sweetalert.min.js HTTP/1.1" 200 16994
+0:0:0:0:0:0:0:1 - - [10/May/2018:19:24:22 -0500] "GET /Promocion/resources/js/bootstrap-select.min.js HTTP/1.1" 200 33933
+0:0:0:0:0:0:0:1 - - [10/May/2018:19:24:22 -0500] "GET /Promocion/resources/js/functions-system.js HTTP/1.1" 200 3529
+0:0:0:0:0:0:0:1 - - [10/May/2018:19:24:23 -0500] "GET /Promocion/resources/js/bootstrap-session-timeout.js HTTP/1.1" 200 10199
+0:0:0:0:0:0:0:1 - - [10/May/2018:19:24:23 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [10/May/2018:22:12:01 -0500] "GET /Promocion/participa/ticket/index/activo.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [10/May/2018:22:12:02 -0500] "GET /Promocion/login-denied.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [10/May/2018:22:12:02 -0500] "GET /Promocion/login.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [10/May/2018:22:12:03 -0500] "GET /Promocion/finish.do?danger=Estas+intentando+ingresar+sin+autorizaci%F3n.%3Cbr%3EPor+favor+ingresa+tus+datos+de+acceso. HTTP/1.1" 200 20024

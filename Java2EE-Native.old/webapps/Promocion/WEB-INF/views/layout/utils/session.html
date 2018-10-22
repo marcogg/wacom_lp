@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title>Sessión...</title>
+</head>
+<body>
+
+<script type="text/javascript" layout:fragment="session-fragment">
+	//alert( "Sesión..." );
+	$.sessionTimeout({
+		keepAliveUrl: '',
+		logoutUrl: '[[@{/login.do}]]',
+		redirUrl: '[[@{/logout.do}]]',
+		warnAfter: 3000000,     // 50 Minutos - Aviso
+		redirAfter: 3600000     // 60 Minutos - Logout
+		//warnAfter: 7000,     // 50 Minutos - Aviso
+		//redirAfter: 10000     // 60 Minutos - Logout
+
+	});
+</script>
+
+
+</body>
+</html>

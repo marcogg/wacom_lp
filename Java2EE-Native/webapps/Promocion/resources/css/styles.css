@@ -1,0 +1,146 @@
+/* bootstrap.css */
+
+body {
+    background: #f4f4f4;
+}
+
+.error {
+    color: #c9302c;
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 3px;
+}
+
+.form-width {
+    margin: 0px auto 0px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.border-radius {
+    border-radius: 10px;
+}
+
+.list-data {
+    border-radius: 10px;
+    padding: 20px;
+    background: #fff;
+}
+
+/* Paginación */
+.bootstrap-dialog-default {
+    text-align: left;
+    padding: 8px 15px;
+    color: #333;
+    width: 100%;
+}
+
+.bootstrap-dialog-primary, .bootstrap-dialog-info, .bootstrap-dialog-success, .bootstrap-dialog-warning, .bootstrap-dialog-danger {
+    text-align: left;
+    padding: 8px 15px;
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+
+.paginate{position: relative;}
+.pagination>li>a, .pagination>li>span {
+    padding: 6px 15px;
+    margin: 3px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    background-color: #ECF0F1;
+    border: 0px;
+    font-size: 13.5px;
+    border-radius: 3px;
+    border: 1px solid #f4f4f4;
+    font-weight: 500;
+}
+.pagination>li>a.page-prev, .pagination>li>span.page-prev,.pagination>li>a.page-next, .pagination>li>span.page-next {
+    background-color: #1478B8;
+    color: #FFF;
+}
+.pagination>li>a.page-prev, .pagination>li>span.page-prev{
+    position: absolute;
+    right: 60px;
+}
+.pagination>li>a.page-next, .pagination>li>span.page-next{
+    position: absolute;
+    right: 0px;
+}
+
+/* Anuncios */
+.anuncio-list {
+    max-width: 1100px;
+}
+
+.anuncio-list-row {
+    background: #fff;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.anuncio-list-row-child {
+    max-width: 700px;
+    margin: auto
+}
+
+.anuncio-list-row-child-title {
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.anuncio-list-row-child-descripcion {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Descripcion de anuncios */
+.text-left-xs {
+    text-align: left;
+}
+
+.text-justify-xs {
+    text-align: justify;
+}
+
+.text-center-xs {
+    text-align: center;
+}
+
+.text-right-xs {
+    text-align: right;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .text-justify-sm {
+        text-align: justify;
+    }
+
+    .text-right-sm {
+        text-align: right;
+    }
+
+    .custom-dropdown {
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .text-justify-md {
+        text-align: justify;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .text-justify-lg {
+        text-align: justify;
+    }
+}

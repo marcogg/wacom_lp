@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:14:58:05 -0600] "GET /Promocion/resources/css/bootstrap-select.min.css HTTP/1.1" 200 6437
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:14:58:08 -0600] "GET /Promocion/resources/js/bootstrap-select.min.js HTTP/1.1" 200 33933
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:14:58:11 -0600] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:14:58:11 -0600] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625

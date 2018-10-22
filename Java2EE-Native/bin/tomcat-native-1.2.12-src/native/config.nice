@@ -1,0 +1,10 @@
+#! /bin/sh
+#
+# Created by configure
+
+"./configure" \
+"--with-apr=/usr/local/apr" \
+"--with-java-home=/opt/jdk1.8.0_144/" \
+"--with-ssl=no" \
+"--prefix=/home/wacom/www/Java2EE-Native" \
+"$@"

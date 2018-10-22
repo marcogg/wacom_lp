@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [22/Feb/2018:00:06:55 -0600] "GET /Promocion/resources/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [22/Feb/2018:03:43:25 -0600] "GET /Promocion/ HTTP/1.1" 200 193

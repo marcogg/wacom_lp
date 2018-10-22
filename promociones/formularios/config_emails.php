@@ -1,0 +1,14 @@
+<?php
+
+// Emails para contacto
+define( 'EMAIL_CONTACTO_FROM', 'contacto@becartewacom.com.mx' );       // Correo de salida y tener permisos para el envio
+define( 'EMAIL_CONTACTO_TO', 'contacto@becartewacom.com.mx' );       // Correo de copia al cliente
+
+// Emails para enviar copia de contacto, agregar uno por linea con apostrofe y separados por coma como se indica en el arreglo
+$email_contacto_array = array(
+	'formularios@kmlmedia.mx',
+	'contacto@becartewacom.com.mx',
+	'formularios@kmlmedia.mx'
+);
+
+

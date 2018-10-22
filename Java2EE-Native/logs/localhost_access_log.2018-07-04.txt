@@ -1,0 +1,14 @@
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:15:26:40 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:15:26:41 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:15:26:41 -0500] "GET /Promocion/resources/js/bootstrap.min.js HTTP/1.1" 200 37045
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:16:51:18 -0500] "GET /Promocion/participa/ticket/index/activo.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:16:51:18 -0500] "GET /Promocion/login-denied.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:16:51:19 -0500] "GET /Promocion/login.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:16:51:20 -0500] "GET /Promocion/finish.do?danger=Estas+intentando+ingresar+sin+autorizaci%F3n.%3Cbr%3EPor+favor+ingresa+tus+datos+de+acceso. HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:16:55:42 -0500] "GET /Promocion/resources/js/bootstrap.min.js HTTP/1.1" 200 37045
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:16:55:43 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:17:25:35 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:17:25:36 -0500] "GET /Promocion/resources/js/bootstrap-session-timeout.js HTTP/1.1" 200 10199
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:17:25:36 -0500] "GET /Promocion/resources/js/sweetalert.min.js HTTP/1.1" 200 16994
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:18:35:02 -0500] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [04/Jul/2018:18:35:07 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957

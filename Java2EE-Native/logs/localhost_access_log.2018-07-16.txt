@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [16/Jul/2018:02:08:58 -0500] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [16/Jul/2018:02:09:01 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [16/Jul/2018:11:28:27 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [16/Jul/2018:11:28:29 -0500] "GET /Promocion/resources/js/bootstrap.min.js HTTP/1.1" 200 37045
+0:0:0:0:0:0:0:1 - - [16/Jul/2018:11:28:31 -0500] "GET /Promocion/resources/js/bootstrap-select.min.js HTTP/1.1" 200 33933
+0:0:0:0:0:0:0:1 - - [16/Jul/2018:11:28:33 -0500] "GET /Promocion/resources/js/functions-system.js HTTP/1.1" 200 3529
+0:0:0:0:0:0:0:1 - - [16/Jul/2018:11:28:34 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [16/Jul/2018:11:28:35 -0500] "GET /Promocion/resources/css/bootstrap-select.min.css HTTP/1.1" 200 6437

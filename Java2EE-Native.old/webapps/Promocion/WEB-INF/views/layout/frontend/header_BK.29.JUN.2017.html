@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<section layout:fragment="header-fragment">
+
+
+	<!--- TIPO HEADER --->
+			<header id="header" class="header-narrow header-semi-transparent" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 1, 'stickySetTop': '1'}">
+            
+            
+				<div class="header-body">
+					<div class="header-container container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-logo">
+									<a href="/index.html">
+										<img alt="Wacom" width="80" height="75" th:src="|${path}img/logo.png|">
+									</a>
+								</div>
+							</div>
+                            
+                            
+							<div class="header-column">
+                            
+								<div class="header-row">
+                                
+                                <!--- TIPO NAVEGACIÓN OVER --->
+									<div class="header-nav header-nav-top-line">
+                                    
+                                    
+										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+											<i class="fa fa-bars"></i>
+										</button>
+                                        
+                                        
+										<ul class="header-social-icons social-icons hidden-xs show-lg show-md show-sm">
+                                        
+                                        
+											<li class="social-icons-facebook"><a href="https://www.facebook.com/becArtemx" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+										</ul>
+                                        
+                                        
+										<div class="header-nav-main header-nav-main-square header-nav-main-effect-3 header-nav-main-sub-effect-1 collapse">
+                                        
+                                        
+											<nav>
+												<ul class="nav nav-pills" id="mainNav">
+													<li class="dropdown active">
+														<a data-hash data-hash-offset="70" href="http://becartewacom.com.mx/index.html" target="_blank">Inicio</a>
+                                                  </li>
+                                                    
+                                                    
+                                                    
+													<li>
+														<a data-hash data-hash-offset="70" href="http://becartewacom.com.mx/index.html#detalles" target="_blank">COMO PARTICIPAR</a>
+													</li>
+													<li>
+														<a data-hash data-hash-offset="70" href="http://becartewacom.com.mx/index.html#eventos" target="_blank">EVENTOS</a>
+													</li>
+													<li>
+														<a data-hash data-hash-offset="70" href="http://becartewacom.com.mx/index.html#comprar" target="_blank">Donde comprar</a>
+													</li>
+													<li>
+														<a data-hash data-hash-offset="70" href="http://becartewacom.com.mx/terminos-y-condiciones-becarte.html" target="_blank">Términos y Condiciones</a>
+													</li>
+                                                    
+                                                    
+												</ul>
+											</nav>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+            
+            
+             <div class="p-none m-none center" style="background:url(/img/slides/purple-pixels_bg.jpg) top center; background-size: cover;">
+            
+
+              <img th:src="|${path}/img/banner-wacom-responsive.png|" class="padding-responsivo-menu" alt="" style=" width:100%; height:auto; max-width:1103px; max-height:500px;"/>
+              
+               <!--- Botón PASOS DINÁMICA
+								<a class="tp-caption enjoy-css btn btn-sm btn-slider-action borde-btn-pixeles2"><span style="font-size:12px; padding:8px;">GAME MANUAL</span></a> --->
+                                    
+                                    
+                                    <!--- Botón PARTICIPAR 
+								<a class="tp-caption enjoy-css btn btn-sm btn-slider-action borde-btn-pixeles2" href="http://becartewacom.com.mx/Promocion" target="_blank"><span style="font-size:12px; ">PLAY NOW!</span></a>--->
+            </div>
+            
+            
+</section>
+
+<!--- </body>
+</html> --->

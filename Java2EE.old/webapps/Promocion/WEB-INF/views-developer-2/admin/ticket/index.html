@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/backend/main}">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<div layout:fragment="content-fragment" class="container">
+
+	<div layout:include="layout/frontend/messages :: messages-fragment">Messages...</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title" th:class="text-uppercase" th:if="${status eq 'ACTIVO'}">Tickets Activos</h4>
+			<h4 class="panel-title" th:class="text-uppercase" th:if="${status eq 'EXPIRADO'}">Tickets Expirados</h4>
+			<h4 class="panel-title" th:class="text-uppercase" th:if="${status eq 'DESCALIFICADO'}">Tickets Descalificados</h4>
+			<h4 class="panel-title" th:class="text-uppercase" th:if="${status eq 'CODIGO_ENVIADO'}">Tickets con Código Enviado</h4>
+		</div>
+		<div class="panel-body">
+			<div class="text-center" th:if="${!tickets.isEmpty()}">
+				<ul class="pagination"></ul>
+			</div>
+			<br>
+
+
+			<table class="table table-bordered table-hover">
+				<thead>
+				<tr class="text-uppercase active">
+					<th>Descripción</th>
+					<th>Cliente</th>
+					<th>Número/Monto</th>
+					<th>Fechas</th>
+				</tr>
+				</thead>
+
+				<tbody>
+				<tr th:each="tic, status : ${tickets}">
+					<td>
+						<div>
+							<a th:with="split=${#strings.arraySplit(tic.imagen, '.')}"
+							   th:href="@{/resources/cms_files/tickets/} + ${tic.imagen}"
+							   th:download="${tic.imagen}">
+
+								<img th:src="@{/resources/cms_files/tickets/} + ${split[0]} + '-thumbnail.' + ${split[1]}" class="img-responsive"
+									 style="border: 1px solid #ccc; border-radius: 3px; max-height: 200px;">
+							</a>
+
+						</div>
+						<br>
+
+						<div th:utext="|<strong>Tienda/producto</strong><br>${tic.tienda}<br>${tic.descripcion}|"></div>
+
+					</td>
+					<td class="text-uppercase">
+						<div th:utext="|${tic.usuario.nombre} ${tic.usuario.paterno} ${tic.usuario.materno}<br><strong>${tic.usuario.email}</strong>|"></div><br>
+
+						<!-- Votos
+						<div>
+							<a class="btn btn-primary" href="javascript:void(0);" style="width: 120px;">
+								<span class="badge" th:utext="${tic.childVotos.size() + ' Votos'}">Votos...</span>
+							</a>
+
+						</div>
+						-->
+
+						<div th:if="${tic.status eq 'ACTIVO'}">
+							<!-- Código de activación -->
+							<a th:href="|@{/admin/ticket/codigo-activacion}/${tic.id}/${tic.usuario.id}.do|" th:data-ticket="${tic.numero}" class="btn btn-success btn-activar-codigo">
+								<span class="glyphicon glyphicon-ok"></span>
+								Enviar código - Canje Adobe
+							</a>
+							<br><br>
+
+							<!-- Desactivar Ticket -->
+							<form name="form-desactivar"
+								  method="post"
+								  th:action="@{/admin/ticket/calificar.do}"
+								  onsubmit="return validateTicketDescalificarForm(this);">
+
+								<input name="ticketId" type="hidden" th:value="${tic.id}">
+								<input name="usuarioId" type="hidden" th:value="${tic.usuario.id}">
+
+								<button type="submit" class="btn btn-danger">
+									<span class="glyphicon glyphicon-remove"></span>
+									Descalificar
+								</button>
+
+							</form>
+
+						</div>
+
+						<div th:if="${tic.status eq 'DESCALIFICADO'}">
+							<div style="font-weight: bold; color: #336699;">DESCALIFICADO</div>
+						</div>
+
+						<div th:if="${tic.status eq 'CODIGO_ENVIADO'}" class="bold" style="font-weight: bold; color: #336699;">
+							CÓDIGO DE CANJE ADOBE:<br>
+							<div style="text-transform: lowercase;" th:utext="${tic.codigo.getCodigo()}|">...</div>
+						</div>
+
+					</td>
+					<td>
+						<div th:utext="|<strong>Número:</strong><br>${tic.numero}|"></div><br>
+						<div class="bold" th:utext="|$${#numbers.formatDecimal(tic.monto, 1, 'COMMA', 2, 'POINT')}|"></div>
+					</td>
+					<td>
+						<span class="bold" th:utext="|<strong>Compra:</strong><br>${#dates.format( tic.fechaCompra, 'dd/MM/yyyy' )}|">Monto...</span><br><br>
+						<span th:utext="|<strong>Registro:</strong><br>${{tic.dateCreated}}|">Monto...</span><br>
+
+					</td>
+				</tr>
+				</tbody>
+
+			</table>
+
+
+			<form id="tickets" name="tickets" method="post" th:action="@{/admin/ticket/index.do}">
+				<!--
+				<input id="numberPage" 	name="numberPage" 	th:value="${pageNumber}" type="hidden">
+				<input id="pageSizes" 	name="pageSizes" 	th:value="${pageSize}" 	 type="hidden">
+				<input id="status" 		name="status" 		th:value="${status}"	 type="hidden">
+				<input id="search" 		name="search" 		th:value="${search}"	 type="hidden">
+				-->
+
+			</form>
+
+			<h4 th:if="${tickets.isEmpty() && status eq 'ACTIVO'}" class="text-center">*Por el momento no existen tickets activos</h4>
+			<h4 th:if="${tickets.isEmpty() && status eq 'EXPIRADO'}" class="text-center">*Por el momento no existen tickets expirados</h4>
+			<h4 th:if="${tickets.isEmpty() && status eq 'DESCALIFICADO'}" class="text-center">*Por el momento no existen tickets descalificados</h4>
+
+
+			<div class="text-center" th:if="${!tickets.isEmpty()}">
+				<ul class="pagination"></ul>
+			</div>
+
+		</div>
+
+	</div>
+
+	<script type="text/javascript" th:inline="javascript">
+		/*<![CDATA[*/
+		$(function () {
+			// Repopulate los datos de la lista de roles seleccionados
+			$('.pagination').twbsPagination({
+				initiateStartPageClick: false,
+				totalPages: [[${totalPages}]],
+				visiblePages: 10,
+				startPage: [[${pageNumber}]],
+				first: "<<",
+				prev: "<",
+				next: ">",
+				last: ">>",
+
+				onPageClick: function (event, page) {
+					$("#form-search-menu #numberPage").val(page);
+					$("#form-search-menu").trigger("submit");
+					//$('#page-content').text('Page ' + page);
+					//self.location = "/admin/categoria/[[${parent}]]/" + page + "/[[${pageSize}]]/[[${letter}]]";
+					//alert( page );
+
+				}
+			});
+
+		})
+		/*]]>*/
+
+	</script>
+
+</div>
+
+</body>
+</html>

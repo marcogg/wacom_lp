@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/frontend/main}">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<div layout:fragment="content-fragment" class="container">
+
+	<div layout:include="layout/frontend/messages :: messages-fragment">Messages...</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title" th:class="text-uppercase" th:if="${status eq 'activo'}">Mi Ticket</h4>
+			<!--
+			<h4 class="panel-title" th:class="text-uppercase" th:if="${status eq 'activo'}">Mis Tickets activos</h4>
+			<h4 class="panel-title" th:class="text-uppercase" th:if="${status eq 'expirado'}">Mis Tickets Expirados</h4>
+			<h4 class="panel-title" th:class="text-uppercase" th:if="${status eq 'descalificado'}">Mis Tickets Descalificados</h4>
+			-->
+		</div>
+		<div class="panel-body">
+			<div class="text-center" th:if="${!tickets.isEmpty()}">
+				<ul class="pagination"></ul>
+			</div>
+			<br>
+
+			<form id="tickets" name="tickets" method="post" th:action="@{/participa/ticket/index.do}">
+
+				<div th:each="tic : ${tickets}" class="col-sm-3">
+					<ul class="list-group">
+						<li class="list-group-item list-group-item active text-center">
+							<h2 class="list-group-item-heading" th:text="${tic.titulo}" style="font-weight: bold;">Título...</h2>
+							<h4 class="list-group-item-heading" th:text="${tic.producto.nombre}">Descripción...</h4>
+							<div th:text="${tic.tienda}">Tienda...</div>
+						</li>
+						<li class="list-group-item text-center" style="height:300px;">
+							<div th:if="${tic.imagen eq null || tic.imagen eq ''}">
+								Sin/Ticket
+							</div>
+
+							<a th:if="${tic.imagen ne null && tic.imagen ne ''}"
+							   th:href="@{/resources/cms_files/tickets/} + ${tic.imagen}"
+							   th:download="${tic.imagenNombre}">
+
+								<img th:src="|@{/resources/cms_files/tickets}/${tic.imagen}"
+								     style="max-width: 200px; border: 1px solid #ccc; border-radius: 3px;">
+							</a>
+
+						</li>
+						<li class="list-group-item text-center">
+
+							<a  th:href="@{/participa/ticket/edit/} + ${tic.id} + '.do'" class="btn btn-primary">
+								<i class="glyphicon glyphicon-eye-open"></i>
+								Ver mi ticket
+							</a>
+							<br><br>
+
+							<th:block th:if="${tic.status eq 'EXPIRADO' or tic.status eq 'DESCALIFICADO'}">
+
+								<div class="text-center" style="font-weight: bold; color: #336699;">DESCALIFICADO</div>
+
+							</th:block>
+
+						</li>
+						<li class="list-group-item text-center" th:if="${tic.monto > 0}">
+							<div th:utext="|FECHA DE COMPRA<br>${#dates.format( tic.fechaCompra, 'dd/MM/yyyy' )}|" style="font-weight:bold;"></div>
+							<div th:text="'$ ' + ${#numbers.formatDecimal(tic.monto, 0, 'COMMA', 2, 'POINT')} + ' MXN'" style="font-weight:bold;">Monto...</div>
+							<br>
+
+							<div th:utext="|FECHA DE REGISTRO<br>${{tic.dateCreated}}|" style="font-weight:bold;">...</div>
+						</li>
+					</ul>
+				</div>
+
+				<input id="numberPage" name="numberPage" th:value="${numberPage}" type="hidden">
+				<input id="pageSizes" name="pageSizes" th:value="${pageSizes}" type="hidden">
+
+			</form>
+
+			<h4 th:if="${tickets.isEmpty() && status eq 'activo'}" class="text-center">*Por el momento no existen tickets activos</h4>
+			<h4 th:if="${tickets.isEmpty() && status eq 'expirado'}" class="text-center">*Por el momento no existen tickets expirados</h4>
+			<h4 th:if="${tickets.isEmpty() && status eq 'descalificado'}" class="text-center">*Por el momento no existen tickets descalificados</h4>
+
+		</div>
+
+		<div class="text-center" th:if="${!tickets.isEmpty()}">
+			<ul class="pagination"></ul>
+		</div>
+
+		<p>&nbsp;</p>
+
+	</div>
+
+	<script type="text/javascript" th:inline="javascript">
+		/*<![CDATA[*/
+		$(function () {
+			// Repopulate los datos de la lista de roles seleccionados
+			$('.pagination').twbsPagination({
+				initiateStartPageClick: false,
+				totalPages: [[${pageSizes}]],
+				visiblePages: 10,
+				startPage: [[${numberPage}]],
+				first: "<<",
+				prev: "<",
+				next: ">",
+				last: ">>",
+
+				onPageClick: function (event, page) {
+					$("#numberPage").val(page);
+					$("#tickets").trigger("submit");
+					//$('#page-content').text('Page ' + page);
+					//self.location = "/admin/categoria/[[${parent}]]/" + page + "/[[${pageSize}]]/[[${letter}]]";
+					//alert( page );
+
+				}
+			});
+
+		})
+		/*]]>*/
+
+	</script>
+
+</div>
+
+</body>
+</html>

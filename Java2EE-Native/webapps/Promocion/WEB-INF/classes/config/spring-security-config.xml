@@ -1,0 +1,49 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+             http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+    <http use-expressions="true" auto-config="true">
+        <intercept-url pattern="/" access="permitAll"/>
+        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ROOT') or hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/participa/**" access="hasRole('ROLE_USUARIO')"/>
+
+        <form-login login-page="/login-denied.do"
+                    authentication-success-handler-ref="customSuccessHandler"
+                    authentication-failure-url="/login-failure.do"
+                    username-parameter="username"
+                    password-parameter="password"/>
+
+        <logout delete-cookies="JSESSIONID"
+                logout-success-url="/logout.do"
+                logout-url="/logout.do"
+                invalidate-session="true"/>
+
+        <!-- enable csrf protection -->
+        <csrf disabled="false" />
+
+    </http>
+
+    <global-method-security secured-annotations="enabled"/>
+
+    <!-- Agregar los nuevos beans customizados -->
+    <!-- Direccion de URL -->
+    <beans:bean id="customSuccessHandler" class="com.dsysprog.wacom.component.CustomSuccessHandler" />
+
+    <!-- Validación de Login -->
+    <beans:bean name="usuarioDetailsService" class="com.dsysprog.wacom.service.impl.persona.UsuarioDetailsServiceImpl"/>
+
+    <!-- Encriptación de password -->
+    <beans:bean id='bCryptPasswordEncoder' class='org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder'/>
+
+    <authentication-manager>
+        <authentication-provider user-service-ref="usuarioDetailsService">
+            <password-encoder ref="bCryptPasswordEncoder" />
+
+        </authentication-provider>
+
+    </authentication-manager>
+
+</beans:beans>
+

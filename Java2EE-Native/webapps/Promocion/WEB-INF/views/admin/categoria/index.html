@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/backend/main}">
+
+<head>
+	<title>...</title>
+</head>
+
+<body>
+
+
+<div layout:fragment="content-fragment" class="container">
+
+	<div layout:include="layout/backend/messages :: messages-fragment">Messages...</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Categorias</h3>
+		</div>
+		<div class="panel-body">
+
+			<table class="table table-striped">
+				<thead>
+				<tr>
+					<th>Categorias</th>
+					<th>Subcategorias</th>
+				</tr>
+				</thead>
+
+				<tbody>
+
+				<th:block th:each="cat1 : ${categorias}">
+					<tr>
+
+						<td>
+							<div class="row">
+								<div class="col-sm-6">
+									<span th:text="${cat1.nombre}"></span>
+								</div>
+								<div class="col-sm-6 text-right">
+									<a th:if="${cat1.imagen != null && cat1.imagen != ''}" th:href="@{/resources/categoria/} + ${cat1.imagen}" target="_blank">
+										<img class="img-thumbnail" th:src="@{/resources/categoria/} + ${cat1.imagen}" style="width: 40px; height: 38px;">
+									</a>
+
+									<a class="btn btn-default" th:href="@{/admin/categoria/edit/} + ${cat1.id} + '.do'" title="Editar">
+										<span class="glyphicon glyphicon-pencil"></span>
+									</a>
+
+									<a th:if="${cat1.childCategories.isEmpty()}" class="btn btn-default btn-delete" th:href="@{/admin/categoria/delete/} + ${cat1.id}" th:title="${cat1.nombre}">
+										<span class="glyphicon glyphicon-trash"></span>
+									</a>
+
+								</div>
+
+							</div>
+
+						</td>
+						<td>
+							<div th:each="cat2 : ${cat1.childCategories}" class="row" style="margin-bottom: 3px;">
+								<div class="col-sm-6">
+									<span th:text="${cat2.nombre}"></span>
+								</div>
+								<div class="col-sm-6 text-right">
+									<a th:if="${cat2.imagen != null && cat2.imagen != ''}" th:href="@{/resources/cms_files/categoria/} + ${cat2.imagen}" target="_blank">
+										<img class="img-thumbnail" th:src="@{/resources/cms_files/categoria/} + ${cat2.imagen}" style="width: 40px; height: 38px;">
+									</a>
+
+									<a class="btn btn-default" th:href="@{/admin/categoria/edit/} + ${cat2.id} + '.do'" title="Editar">
+										<span class="glyphicon glyphicon-pencil"></span>
+									</a>
+
+									<a class="btn btn-default btn-delete" th:href="@{/admin/categoria/delete/} + ${cat2.id}" th:title="${cat2.nombre}">
+										<span class="glyphicon glyphicon-trash"></span>
+									</a>
+
+								</div>
+
+							</div>
+
+							<div th:if="${cat1.childCategories.isEmpty()}">*No existen subcategorias</div>
+
+						</td>
+
+					</tr>
+
+				</th:block>
+
+				</tbody>
+
+			</table>
+
+		</div>
+
+		<!-- Si no existen registros -->
+		<div th:if="${categorias.isEmpty()}" class="text-center">
+			<h4>*No existen registros.</h4>
+		</div>
+
+	</div>
+
+</div>
+
+</body>
+</html>

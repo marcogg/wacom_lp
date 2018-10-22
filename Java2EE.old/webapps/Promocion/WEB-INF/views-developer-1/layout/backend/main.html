@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns="http://java.sun.com/jsf/html"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title th:text="#{application.title}"></title>
+
+	<!-- Latest compiled and minified CSS -->
+	<!--<link th:href="@{/resources/css/bootstrap-theme.min.css}" rel="stylesheet">-->
+
+	<link th:href="@{/resources/css/bootstrap.min.css}" rel="stylesheet">
+
+	<link th:href="@{/resources/css/bootstrap-select.min.css}" rel="stylesheet">
+
+	<link th:href="@{/resources/css/sweetalert.css}" rel="stylesheet">
+
+	<link th:href="@{/resources/css/styles.css}" rel="stylesheet">
+
+	<!-- FONTS -->
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<script type="text/javascript" th:src="@{/resources/js/bootstrap.min.js}"></script>
+
+	<script type="text/javascript" th:src="@{/resources/js/bootstrap-select.min.js}"></script>
+
+	<script type="text/javascript" th:src="@{/resources/js/sweetalert.min.js}"></script>
+
+	<script type="text/javascript" th:src="@{/resources/js/jquery.twbsPagination.js}"></script>
+
+	<script type="text/javascript" th:src="@{/resources/js/bootstrap-session-timeout.js}" charset="UTF-8"></script>
+
+	<script type="text/javascript" th:src="@{/resources/js/functions-system.js}" charset="UTF-8"></script>
+</head>
+
+<body>
+
+
+<!-- Fragmento de contenido: Header y si es editable en el layout -->
+<section layout:include="layout/backend/header :: header-fragment" style="background-color: #999; padding: 15px;">Header...</section>
+
+
+<!-- Fragmento de Contenido: Menu -->
+<div layout:include="layout/backend/menu :: menu-fragment">Menu...</div>
+
+
+<!-- No es editable, es solo lectura pero es necesaria para que el contenido de los view puedan ser mostrados -->
+<div layout:fragment="content-fragment">Contenido...</div>
+
+
+<!-- Fragmento de contenido: Footer y si es editable en el layout -->
+<section layout:include="layout/backend/footer :: footer-fragment">Footer...</section>
+
+
+<!-- Fragmento de Sesión, no es editable, es de solo lectura -->
+<script type="text/javascript" layout:include="layout/utils/session :: session-fragment" sec:authorize="isAuthenticated()"></script>
+
+
+</body>
+
+</html>

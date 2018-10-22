@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/frontend/main}">
+
+<head>
+	<title>...</title>
+</head>
+
+<body>
+
+
+<div layout:fragment="content-fragment" class="container form-width">
+
+	<div layout:include="layout/frontend/messages :: messages-fragment">Messages...</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Registrar mi Ticket</h3>
+		</div>
+		<div class="panel-body">
+			<div class="alert alert-info text-center" style="font-size: 20px;">
+				Te recordarmos que al momento de dar de alta tu ticket,<br>
+				te llegara un correo con las instrucciones para activar tu cuenta y<br>posteriormente ya podrás tener acceso a nuestro portal.
+			</div>
+
+			<h3 class="text-center" style="color: #000;">Los campos con(*) son necesarios.</h3>
+
+			<br>
+
+			<form th:object="${ticket}" id="ticket" name="ticket" method="post" th:action="@{/registro/add-ticket.do}">
+
+				<div class="row">
+
+					<div class="form-group col-sm-6">
+						<label>Fecha de compra(Día, Mes y Año) *:</label>
+						<div class="row">
+							<div class="col-sm-4">
+								<select th:field="*{day}" class="form-control">
+									<option value="">- Día -</option>
+									<option th:each="i : ${#numbers.sequence( 1, 31 )}"
+											th:with="index=${i < 10 ? '0' + i : i}"
+											th:value="${index}"
+											th:text="${index}"></option>
+								</select>
+
+								<div th:if="${#fields.hasErrors('day')}" th:errors="*{day}" class="error">Name Error</div>
+
+							</div>
+
+							<div class="col-sm-4" th:with="mesesArray=${'ENE,FEB,MAR,ABR,MAY,JUN,JUL,AGO,SEP,OCT,NOV,DIC'}">
+								<select th:field="*{month}" class="form-control">
+									<option value="">- Mes -</option>
+									<option th:each="i : ${#numbers.sequence( 1, 12 )}"
+											th:with="index=${i < 10 ? '0' + i : i}"
+											th:value="${index}"
+											th:text="${index}">...</option>
+								</select>
+
+								<div th:if="${#fields.hasErrors('month')}" th:errors="*{month}" class="error">Name Error</div>
+
+							</div>
+
+							<div class="col-sm-4">
+								<select th:field="*{year}" class="form-control">
+									<option value="">- Año- </option>
+									<option th:each="i : ${#numbers.sequence( 2016, 2017 )}"
+											th:value="${i}"
+											th:text="${i}">...</option>
+								</select>
+
+								<div th:if="${#fields.hasErrors('year')}" th:errors="*{year}" class="error">Name Error</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label>Número del Ticket *:</label>
+						<input th:field="*{numero}" class="form-control" maxlength="20">
+						<div th:if="${#fields.hasErrors('numero')}" th:errors="*{numero}" class="error">Name Error</div>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<label>Descripción del producto que compraste *:</label>
+						<input th:field="*{descripcion}" class="form-control" maxlength="255">
+						<div th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}" class="error">Name Error</div>
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label>Tienda *:</label>
+						<input th:field="*{tienda}" class="form-control" maxlength="150">
+						<div th:if="${#fields.hasErrors('tienda')}" th:errors="*{tienda}" class="error">Name Error</div>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<label>Monto del ticket $ *:</label>
+						<input th:field="*{monto}" class="form-control" maxlength="15">
+						<div th:if="${#fields.hasErrors('monto')}" th:errors="*{monto}" class="error">Name Error</div>
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label>Foto del Ticket(png, jpg, jpeg y máximo 5 megabytes):</label>
+						<input th:field="*{imagen}" type="hidden">
+						<input th:field="*{imagenForm}" type="hidden">
+						<br>
+						<button type="button" class="btn btn-danger btn-upload" data-toggle="modal" data-name-field="imagen" data-megabytes="5" data-extensions="png, jpg, jpeg" data-target="#uploadModal" style="width: 150px; margin-bottom: 5px;">
+							SUBIR MI TICKET...
+						</button>
+						<div id="imagen-preview-form">
+							<a th:if="*{imagenFormUrl != null}" th:href="@{${ticket.imagenFormUrl}}" target="_blank">
+								<img class="img-thumbnail" th:src="@{${ticket.imagenFormUrl}}" style="max-width: 200px; border: 1px solid #ccc; border-radius: 3px;">
+							</a>
+						</div>
+
+						<div th:if="*{#fields.hasErrors('imagen')}" th:errors="*{imagen}" class="error">Name Error</div>
+					</div>
+
+				</div>
+
+				<div class="row">&nbsp;</div>
+
+				<div class="text-center">
+					<!--
+					<a class="btn btn-primary" th:href="@{/participa/ticket/index/activo.do}">
+						<span class="glyphicon glyphicon-arrow-left"></span>
+						Regresar
+					</a>
+					-->
+
+					<button type="submit" class="btn btn-primary">
+						<span class="glyphicon glyphicon-ok"></span>
+						Registrar mi ticket
+					</button>
+
+				</div>
+
+				<input th:field="*{usuario.id}"  type="hidden">
+				<input th:field="*{status}"  type="hidden">
+				<input th:field="*{dateCreated}" type="hidden">
+
+			</form>
+
+		</div>
+
+	</div>
+
+	<!-- Template Upload -->
+	<div layout:include="layout/utils/upload :: upload-fragment">Upload...</div>
+
+</div>
+
+</body>
+</html>

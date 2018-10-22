@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/frontend/main}">
+<head>
+	<meta charset="UTF-8">
+	<title>Confirmación de Registro</title>
+
+	<!--
+	<link th:href="@{/resources/css/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{/resources/css/styles.css}" rel="stylesheet">
+	-->
+
+</head>
+<body>
+
+<div layout:fragment="content-fragment" class="container form-width">
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+
+				<span th:if="${accion == 'success'}">
+					Registro activado
+				</span>
+
+				<span th:if="${accion == 'activado'}">
+					El registro ya fue activado
+				</span>
+
+				<span th:if="${accion == 'caducado'}">
+					Confirmación de correo electrónico
+				</span>
+
+			</h4>
+		</div>
+		<div class="panel-body">
+
+			<div style="color: #000;" class="text-center">
+
+				<div th:if="${accion == 'success'}">
+					<strong style="font-size: 16px;">
+						Estimado/a: <span th:text="${nombre}">Nombre...</span>
+					</strong>
+					<br><br>
+					Te recordamos que tu cuenta de correo electrónico ha sido confirmada y activada en este momento.<br>
+					Gracias por participar.
+				</div>
+
+				<div th:if="${accion == 'activado'}">
+					<strong style="font-size: 16px;">
+						Estimado/a: <span th:text="${nombre}">Nombre...</span>
+					</strong>
+					<br><br>
+					Te recordamos que tu cuenta de correo electrónico ya fue activada anteriormente.<br>
+					Gracias por participar.
+				</div>
+
+				<div th:if="${accion == 'caducado'}">
+					<br>
+					<strong style="font-size: 16px;">
+						¡¡ Aviso !!
+					</strong>
+					<br>
+					Te recordamos que la confirmación de tu correo electrónico ha expirado.<br><br><br>
+
+					<div class="text-left">
+						<div class="warning alert alert-warning text-center" th:if="${warning}" style="display: none;">
+							<span class="glyphicon glyphicon-remove"></span>
+							<span th:text="${warning}"></span>
+						</div>
+						<form id="registro" name="registro" method="post"
+						      th:with="token=${_csrf.parameterName + '=' + _csrf.token}"
+						      th:action="@{/registro/confirmar-nuevamente.do}">
+							<div class="form-group">
+								<label>Escribe tu correo electrónico *:</label>
+								<input id="email" name="email" class="form-control" th:value="${email}">
+							</div>
+
+							<div class="text-center">
+								<button id="submit" name="submit" type="submit" class="btn btn-primary">Solicitar un nuevo correo electrónico de verificación</button>
+							</div>
+
+						</form>
+
+						<script type="text/javascript">
+							$(function () {
+								$(".warning").show(500);
+								$("#submit").attr("disabled", false);
+
+								$("#submit").on("onclik", function (evt) {
+									evt.preventDefault();
+									$(this).attr("disabled", true);
+									$(this).html("Enviando nueva solicitud de verificación");
+								})
+
+							})
+						</script>
+					</div>
+
+				</div>
+
+			</div>
+			<br><br>
+
+			<div th:if="${accion == 'success' || accion == 'activado' || accion == 'confirmar'}" class="text-center">
+				<a th:href="@{/login.do}" class="btn btn-primary">
+					<strong>Aceptar</strong>
+				</a>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>

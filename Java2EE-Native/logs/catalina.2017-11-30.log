@@ -1,0 +1,4 @@
+30-Nov-2017 05:33:56.324 WARNING [http-nio-8083-exec-10] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts An attempt was made to authenticate the locked user [admin]
+30-Nov-2017 05:33:56.405 WARNING [http-nio-8083-exec-2] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts An attempt was made to authenticate the locked user [admin]
+30-Nov-2017 05:33:56.870 WARNING [http-nio-8083-exec-9] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts An attempt was made to authenticate the locked user [tomcat]
+30-Nov-2017 05:34:01.460 WARNING [http-nio-8083-exec-6] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts An attempt was made to authenticate the locked user [root]

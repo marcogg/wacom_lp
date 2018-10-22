@@ -1,0 +1,14 @@
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:06:43:42 -0600] "GET /Promocion/ HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:06:43:42 -0600] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:06:43:43 -0600] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:10:30:38 -0600] "GET /Promocion/ HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:10:30:38 -0600] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:10:30:38 -0600] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:10:30:55 -0600] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:10:30:56 -0600] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:15:40:28 -0600] "GET /Promocion/ HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:15:40:28 -0600] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:15:40:29 -0600] "GET /Promocion/finish.do HTTP/1.1" 200 20024
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:15:40:29 -0600] "GET /Promocion/ HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:15:40:29 -0600] "GET /Promocion/registro/index.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [29/Dec/2017:15:40:29 -0600] "GET /Promocion/finish.do HTTP/1.1" 200 20024

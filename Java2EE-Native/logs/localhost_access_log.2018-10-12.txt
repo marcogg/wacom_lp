@@ -1,0 +1,9 @@
+0:0:0:0:0:0:0:1 - - [12/Oct/2018:00:38:55 -0500] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [12/Oct/2018:00:38:56 -0500] "GET /Promocion/resources/js/bootstrap-session-timeout.js HTTP/1.1" 200 10199
+0:0:0:0:0:0:0:1 - - [12/Oct/2018:00:38:56 -0500] "GET /Promocion/resources/js/bootstrap.min.js HTTP/1.1" 200 37045
+0:0:0:0:0:0:0:1 - - [12/Oct/2018:00:38:56 -0500] "GET /Promocion/resources/js/jquery.twbsPagination.js HTTP/1.1" 200 11482
+0:0:0:0:0:0:0:1 - - [12/Oct/2018:00:38:57 -0500] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [12/Oct/2018:00:38:57 -0500] "GET /Promocion/resources/js/sweetalert.min.js HTTP/1.1" 200 16994
+0:0:0:0:0:0:0:1 - - [12/Oct/2018:00:38:58 -0500] "GET /Promocion/resources/js/functions-system.js HTTP/1.1" 200 3529
+0:0:0:0:0:0:0:1 - - [12/Oct/2018:20:59:39 -0500] "GET /Promocion HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [12/Oct/2018:20:59:40 -0500] "GET /Promocion/ HTTP/1.1" 200 193

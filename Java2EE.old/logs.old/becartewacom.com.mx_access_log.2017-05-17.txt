@@ -1,0 +1,9 @@
+66.102.7.238 - - [17/May/2017:14:38:59 -0500] "GET /Promocion/login HTTP/1.1" 200 13022
+66.102.7.238 - - [17/May/2017:14:38:59 -0500] "GET /Promocion/img/favicon.ico HTTP/1.1" 404 12314
+207.46.13.170 - - [17/May/2017:23:49:32 -0500] "GET /Promocion/login.do HTTP/1.1" 200 13022
+40.77.178.248 - - [17/May/2017:23:49:35 -0500] "GET /Promocion/resources/css/bootstrap-select.min.css HTTP/1.1" 200 6432
+40.77.178.248 - - [17/May/2017:23:49:41 -0500] "GET /Promocion/resources/js/bootstrap-select.min.js HTTP/1.1" 200 33933
+40.77.178.248 - - [17/May/2017:23:49:41 -0500] "GET /Promocion/resources/js/sweetalert.min.js HTTP/1.1" 200 16994
+40.77.178.248 - - [17/May/2017:23:49:41 -0500] "GET /Promocion/resources/js/jquery.twbsPagination.js HTTP/1.1" 200 11482
+66.102.7.238 - - [17/May/2017:23:55:47 -0500] "GET /Promocion/registro/index.do HTTP/1.1" 200 16610
+66.102.7.236 - - [17/May/2017:23:55:47 -0500] "GET /Promocion/registro/img/favicon.ico HTTP/1.1" 404 12314

@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:11:48:51 -0600] "GET /Promocion/resources/css/styles.css HTTP/1.1" 200 2625
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:11:48:52 -0600] "GET /Promocion/resources/js/bootstrap.min.js HTTP/1.1" 200 37045
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:11:48:56 -0600] "GET /Promocion/resources/css/sweetalert.css HTTP/1.1" 200 22957
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:11:48:58 -0600] "GET /Promocion/resources/js/sweetalert.min.js HTTP/1.1" 200 16994
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:16:56:34 -0600] "GET /Promocion/login.do HTTP/1.1" 302 -
