@@ -964,3 +964,7 @@ html .background-color-none {
     margin-bottom: 25px !important;
 }
 
+.color-white{
+	color: white;
+	text-align: left;
+}
