@@ -3,8 +3,8 @@
 
 
 @font-face {
-    font-family: 'campton-medium';
-	src:url(../fonts/campton-medium.ttf);
+    font-family: 'campton-book';
+	src:url(../fonts/campton-book.ttf);
 	font-weight:600;
 }
 
@@ -32,6 +32,13 @@
 @font-face {
     font-family: 'Standar-07';
 	src:url(../fonts/stan0763.ttf);
+}
+
+@font-face {
+font-family: "Rene Bieder - Campton Book";
+src: url("css/fonts/Rene Bieder - Campton Book.otf");
+src: 
+url("css/fonts/Rene Bieder - Campton Book") format("otf"),
 }
 
 .fuente-pixel {
@@ -75,7 +82,7 @@
 
 
 .fuente-pixel-contador {
-    font-family: "campton-medium", Arial, sans-serif;
+    font-family: "campton-book", Arial, sans-serif;
     /*font-family: 'Standar-07', monospace;*/
 	font-size:22px;
     font-weight: 600;
@@ -94,7 +101,7 @@
 	color:#000;
 	font-size:28px;
     line-height: normal;
-    font-family: "campton-medium", Arial, sans-serif;
+    font-family: "Campton Book", Arial, sans-serif;
     text-transform: none;
     
 }
