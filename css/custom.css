@@ -969,6 +969,17 @@ html .background-color-none {
 	text-align: left;
 }
 
+@media screen and (min-width: 768px){
 .tiendas{
-	padding: 10%;
+	padding: 3%; 
+	margin-left:auto; 
+	margin-right: auto; 
+	margin-top: auto; 
+	margin-bottom: auto; 
+	width:30%; 
+	display: table-cell;
+	vertical-align: middle; 
+	min-height: 200px;
+	position: relative;
+}
 }
