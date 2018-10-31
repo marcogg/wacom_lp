@@ -983,3 +983,27 @@ html .background-color-none {
 	position: relative;
 }
 }
+
+@media screen and (max-width: 768px){
+	.banner-mobile{
+		background-image: url('../img/slides/Banner-PrincipalMob.jpg');
+		background-position: left;
+		background-attachment: fixed;
+		height: 800px;
+		margin-top: -30px
+	}
+}
+
+@media screen and (min-width: 768px){
+	.banner-desktop{
+		background-image: url('../img/slides/Banner-Principal6.jpg');
+		background-attachment: fixed;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-position: 50px 67px;
+		max-width: 100%;
+		margin-top: -33px;
+		height: 400px;
+		background-color: white;
+	}
+}
