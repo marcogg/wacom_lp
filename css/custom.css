@@ -990,7 +990,9 @@ html .background-color-none {
 		background-position: left;
 		background-attachment: fixed;
 		height: 900px;
-		margin-top: -30px
+		margin-top: -30px;
+		background-color: white;
+
 	}
 }
 
