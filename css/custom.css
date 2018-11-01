@@ -998,14 +998,14 @@ html .background-color-none {
 
 @media screen and (min-width: 768px){
 	.banner-desktop{
-		background-image: url('../img/slides/Banner-Principal6.jpg');
+		background-image: url('../img/slides/Banner-Principal7.jpg');
 		background-attachment: fixed;
 		background-size: 100%;
 		background-repeat: no-repeat;
 		background-position: 50px 67px;
 		max-width: 100%;
 		margin-top: -33px;
-		height: 400px;
+		height: 500px;
 		background-color: white;
 	}
 }
