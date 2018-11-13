@@ -1009,3 +1009,16 @@ html .background-color-none {
 		background-color: white;
 	}
 }
+
+
+@media screen and (max-width: 768px){
+	.banner-mobile-br{
+		background-image: url('../img/slides/Banner-PrincipalMob.jpg');
+		background-position: left;
+		background-attachment: fixed;
+		height: 1200px;
+		margin-top: -30px;
+		background-color: white;
+
+	}
+}
